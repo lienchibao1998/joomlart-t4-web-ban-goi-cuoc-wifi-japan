@@ -1,0 +1,169 @@
+// ------------------------------------
+// FORMS
+// ------------------------------------
+
+// Extend style in base
+// --------------------
+@import "../../../plugins/system/t4/themes/base/scss/_forms";
+
+// 
+// Input
+// -----------------------------------
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background: $input-bg;
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+  color: $input-color;
+  //padding: $input-padding-y-lg $input-padding-x-lg;
+  transition: all 0.25s ease-in-out;
+
+  &:hover, &:focus, &:active {
+    box-shadow: none;
+    border: 1px solid $input-focus-border-color;
+  }
+}
+
+// 
+// Button
+// -----------------------------------
+.btn {
+}
+
+// 
+// Textual form controls
+// -----------------------------------
+.form-control {
+}
+
+form.form-horizontal {
+  div.control-group {
+    margin-bottom: $spacer;
+  }
+}
+
+.control-group {
+  //clear: both;
+}
+
+.control-label {
+  label {
+    color: $label-color;
+    font-size: $label-font-size;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+  }
+
+  .form-control-feedback {
+  }
+}
+
+// 
+// Input group
+// ---------------------------
+.input-group-addon {
+  > span {
+  }
+}
+
+
+// 
+// Btn Toolbar
+// --------------------------
+.btn-toolbar {
+  .btn-group + .btn-group {
+  }
+}
+
+// 
+// Input append
+// --------------------------
+.input-prepend.input-prepend {
+  .media-preview.add-on {
+    height: 36px !important;
+    line-height: 36px;
+  }
+
+  .field-media-input[type="text"] {
+    border-radius: 0;
+    padding: 16px 0;
+    width: 160px !important;
+  }
+
+  a.btn.modal {
+    background: $gray-200;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  a.btn {
+    line-height: 1;
+  }
+}
+
+.request-form form.form-horizontal {
+  .control-group {
+    margin-bottom: $spacer;
+
+    &:nth-child(3) {
+      @include media-breakpoint-up(md) {
+        float: left;
+        padding-right: $spacer;
+        width: 50%;
+      }
+    }
+
+    &:nth-child(4) {
+      @include media-breakpoint-up(md) {
+        float: left;
+        padding-left: $spacer;
+        width: 50%;
+      }
+    }
+
+    &:nth-child(5) {
+      clear: both;
+    }
+
+    .control-label {
+      float: none !important;
+      display: block !important;
+    }
+
+    .controls {
+      margin: 0 !important;
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      textarea {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Override for request form
+.com_privacy {
+  .request-form {
+    border: 1px solid $border-color;
+    border-radius: $border-radius-lg;
+    margin: 0 auto;
+    max-width: $spacer*40;
+    padding: $spacer*2;
+
+    form.form-horizontal {
+      .control-group:nth-child(3) {
+        float: none;
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+
+    .form-check-input[type="checkbox"] {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+jQuery(function(t){acym_helperEditorHtml.initEditorHtml(),acym_helperEditorWysid.initEditor(),acym_helperModal.setTemplateModal()});

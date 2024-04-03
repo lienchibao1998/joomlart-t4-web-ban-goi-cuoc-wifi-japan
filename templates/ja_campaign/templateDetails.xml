@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="template" method="upgrade" group="template" client="site">
+	<name>ja_campaign</name>
+	<version>2.1.1</version>
+	<creationDate>Mar 28th, 2024</creationDate>
+	<author>JoomlArt</author>
+	<authorEmail>admin@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+	<license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+  <description>
+  <![CDATA[
+  <div align="center">
+    <div class="alert alert-success" style="background-color:#DFF0D8;border-color:#D6E9C6;color: #468847;padding: 1px 0;">
+      
+      <h3><a href="//www.joomlart.com/joomla/templates/ja-campaign">Free Joomla template for campaign and offer listing website  - JA Campaign</a></h3>
+      
+      <h4><a href="//www.joomlart.com/joomla/templates/ja-campaign" title="">Home</a> | <a href="//joomlart.com/demo/#ja_campaign" title="">Demo</a> | <a href="//www.joomlart.com/documentation/joomla-templates/ja-campaign" title="">Document</a> | <a href="//pm.joomlart.com/browse/JACAMPAIGN" title="">Changelog</a></h4>
+
+      <p><strong>JA Campaign</strong> is a free Joomla template to quickly build a commnunity support campaign website with offer listing feature, offer submit system and customizable email systems.</p>
+
+      <span style="color:#FF0000">Note: JA Campaign requires T4 plugin to be installed and enabled.</span><p></p>
+      <p>Copyright 2004 - 2021 <a href='http://www.joomlart.com/' title='Visit Joomlart.com!'>JoomlArt.com</a>.</p>
+    </div>
+    <style>table.adminform{width: 100%;}</style>
+  </div>
+  ]]>
+</description>
+
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>error-t4.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>offline.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateInfo.php</filename>
+		<folder>css</folder>
+		<folder>etc</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>scss</folder>
+	</files>	
+	<positions>
+		<position>menu</position>
+		<position>off-canvas</position>
+		<position>search</position>
+		<position>banner</position>
+		<position>topbar</position>
+		<position>topbar-l</position>
+		<position>topbar-r</position>
+		<position>masthead</position>
+		<position>hero</position>
+		<position>main-top-1</position>
+		<position>main-top-2</position>
+		<position>main-bottom-1</position>
+		<position>mega-1</position>
+		<position>mega-2</position>
+		<position>mega-3</position>
+		<position>mega-4</position>
+		<position>main-bottom-2</position>
+		<position>breadcrumbs</position>
+		<position>sidebar-l</position>
+		<position>sidebar-r</position>
+		<position>section-1</position>
+		<position>section-2</position>
+		<position>section-3</position>
+		<position>section-4</position>
+		<position>section-5</position>
+		<position>content-mass-top</position>
+		<position>content-mass-bot</position>
+		<position>bottom-a</position>
+		<position>bottom-b</position>
+		<position>bottom-c</position>
+		<position>bottom-d</position>
+		<position>footnav-1</position>
+		<position>footnav-2</position>
+		<position>footnav-3</position>
+		<position>footnav-4</position>
+		<position>footnav-5</position>
+		<position>footer</position>
+		<position>footer-logo</position>
+		<position>debug</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_ja_campaign.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_ja_campaign.sys.ini</language>
+	</languages>
+	<config></config>
+	<t4>
+		<basetheme>base</basetheme>
+	</t4>
+	<updateservers>
+    	<server type="extension" priority="1" name="JA Campaign">http://update.joomlart.com/service/tracking/j31/ja_campaign.xml</server>
+	</updateservers>
+</extension>

@@ -1,0 +1,197 @@
+/*------------------------------------------------------------------------
+# mod_jt_languageswitcher Module
+# ------------------------------------------------------------------------
+# author    joomlatema
+# copyright Copyright (C) 2022 joomlatema.net. All Rights Reserved.
+# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Websites: http://www.joomlatema.net
+-------------------------------------------------------------------------*/
+
+.mod-jt-languageswitcher{position:relative;min-height:50px;}
+#select-container {
+  position: absolute;
+  z-index:999;
+  width: auto;
+  background: #FFFFFF;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  border: 0.5px solid rgba(202, 219, 226, 0.4);
+  box-shadow: 0px 3px 6px rgba(79, 104, 113, 0.2);
+  overflow: hidden;
+  transition: height 0.2s ease-in-out, border-radius 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  min-width:max-content;
+  padding:5px 5px 5px 5px;
+  box-sizing:content-box;
+  display:block;
+}
+#select-container:hover {
+ /* height:206px;*/
+  /* Can't use height: auto & transition effect */
+  border-radius: 20px;
+  box-shadow: 0px 7px 10px rgba(79, 104, 113, 0.3);
+}
+#select-container ul {
+	list-style-type: none;
+	padding:0px 0px;
+	z-index: 2;
+	margin:0;
+	margin-top:4px;
+	margin-bottom:0;
+}
+#select-container ul li {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  padding:4px 0;
+  color:#333;
+  display: block;
+  line-height: 1;
+  font-size:14px;
+  box-sizing: content-box;
+}
+#select-container ul li a{font-weight:normal;}
+#select-container ul li:first-child img {cursor: pointer;}
+#select-container ul li img ,#select-container button.active-lang img{
+  display:inline-block;
+  left: 50%;
+  transform: translate(0%, 0%);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+#select-container ul li img:hover {
+  box-shadow: 0px 5px 10px rgba(79, 104, 113, 0.3);
+ transform: translate(0%, 0%) scale(1.08);
+}
+#select-container span.img-cover {display: grid;place-items: center;}
+
+#select-container button{background-color:#FFFFFF;position:relative;z-index:2;border:0;width:auto;font-size:14px;line-height: normal;}
+#select-container button.active-lang img{cursor: default;margin-bottom:0px;max-content}
+#select-container .langname-code{}
+/* TOOLTIP STYLES FROM THIS PEN https://codepen.io/tutsplus/pen/WROvdG */
+[tooltip] {
+  position: relative;
+  /* opinion 1 */
+  font-weight: bold;
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none;
+  /* opinion 2 */
+  font-size: 12px;
+  /* opinion 3 */
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+
+[tooltip]::before {
+  content: "";
+  border: 5px solid transparent;
+  /* opinion 4 */
+  z-index: 1001;
+  /* absurdity 1 */
+}
+
+[tooltip]::after {
+  content: attr(tooltip);
+  /* magic! */
+  /* most of the rest of this is opinion */
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+  /*
+    Let the content set the size of the tooltips
+    but this will also keep them from being obnoxious
+    */
+ 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 3px;
+  border-radius: 0.3ch;
+  box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+  background: #465663;
+  color: #fff;
+  z-index: 1000;
+  /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip=""]::before,
+[tooltip=""]::after {
+  display: none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^=up]::before {
+  bottom: 50%;
+  border-bottom-width: 0;
+  border-top-color: #465663;
+}
+
+[tooltip]:not([flow])::after,
+[tooltip][flow^=up]::after {
+  bottom: calc(50% + 5px);
+}
+
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^=up]::before {
+  left:50%;
+  bottom: 40px;
+  transform: translate(-50%, -0.5em);
+}
+
+[tooltip][flow^=up]::after {
+  left:50%;
+  bottom: 45px;
+  transform: translate(-50%, -0.5em);
+  z-index:999;
+  width:max-content!important;
+}
+
+/* FLOW: DOWN */
+[tooltip][flow^=down]::before {
+  top: 70%;
+  border-top-width: 0;
+  border-bottom-color: #465663;
+}
+
+[tooltip][flow^=down]::after {
+  top: calc(70% + 5px);
+}
+
+[tooltip][flow^=down]::before,
+[tooltip][flow^=down]::after {
+  left:50%;
+  transform: translate(-50%, 0.5em);
+  width:max-content!important;
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, 0);
+  }
+}
+/* FX All The Things */
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^=up]:hover::before,
+[tooltip][flow^=up]:hover::after,
+[tooltip][flow^=down]:hover::before,
+[tooltip][flow^=down]:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards;
+}

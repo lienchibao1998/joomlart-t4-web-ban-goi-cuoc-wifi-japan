@@ -1,0 +1,1 @@
+jQuery(function(r){acym_helperImport.initImport()});

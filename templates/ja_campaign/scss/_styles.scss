@@ -1,0 +1,889 @@
+//
+// TOP BAR BLOCK
+// ------------------------------------
+.t4-topbar {
+  padding-top: $spacer/1.5;
+  padding-bottom: $spacer/1.5;
+
+  p {
+    margin: 0;
+  }
+}
+
+
+//
+// HEADER BLOCK
+// ------------------------------------
+#t4-header {
+  border-bottom: 1px solid $border-color;
+  padding: 0;
+
+  @include media-breakpoint-up(md) {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
+
+  .header-block {
+    padding-top: $spacer*3;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 0;
+    }
+  }
+}
+
+// 
+// Breakpoint lg
+.nav-breakpoint-lg {
+  .t4-brand {
+    @include media-breakpoint-down(lg) {
+      position: absolute;
+      top: $spacer;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .t4-header-right {
+    @include media-breakpoint-down(lg) {
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+  }
+}
+
+// 
+// Breakpoint medium
+.nav-breakpoint-md {
+  .t4-brand {
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      top: $spacer;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .t4-header-right {
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+  }
+}
+
+#t4-header .t4-brand {
+  @include media-breakpoint-down(sm) {
+    background-color: lighten($gray-100, 3%);
+    border-bottom: 1px solid $gray-100;
+    top: 0;
+    padding: $spacer/1.5 0;
+    text-align: center;    
+  }
+}
+
+#t4-header .t4-header-right {
+  @include media-breakpoint-down(sm) {
+    right: 0;
+    top: 56px;
+    padding-right: $spacer;
+  }
+}
+
+//
+// Logo 
+// ----
+.navbar-brand {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 100%;
+
+  &.logo-image,
+  &.logo-text {
+    text-align: center;
+
+    img {
+      max-width: 50%;
+      max-height: 64px;
+
+      @include media-breakpoint-up(md) {
+        max-width: 100%;
+      }
+    }
+  }
+
+ // Has small logo
+  &.logo-control {
+    img.logo-img {
+      display: none;
+
+      @include media-breakpoint-up(sm) {
+        display: inline-block;
+      }
+    }
+
+    img.logo-img-sm {
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+  }
+
+   // Logo text
+  &.logo-text {
+    > a {
+      text-decoration: none;
+    }
+
+    .site-name {
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: $spacer/2;
+      letter-spacing: 1.5px;
+      line-height: 1;
+    }
+
+    .site-slogan {
+      display: inline-block;
+      opacity: .5;
+      text-transform: none;
+      font-size: $font-size-base;
+      margin-top: -3px;
+      line-height: 1;
+    }
+
+    .logo-img-sm {}
+
+    &.logo-control {
+      .site-name,
+      .site-slogan {
+        display: none;
+
+        @include media-breakpoint-up(sm) {
+          display: block;
+        }
+      }
+
+      .logo-img-sm {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.t4-edit-layout .navbar-brand.logo-image img {
+  max-width: 200px;
+}
+
+// Header right
+// ------------
+.t4-header-right {
+
+  // Menu
+  .navbar {
+    display: block;
+    padding: 0;
+    float: right;
+
+    .nav {
+      display: block;
+
+      .nav-item {
+        display: inline-block;
+        padding: 0 $grid-gutter-width/8;
+      }
+
+      .nav-link {
+        padding: $spacer/3 $grid-gutter-width/4;
+        border-radius: $border-radius;
+
+        &:hover, &:focus, &:active {
+          background-color: $gray-100;
+          color: $gray-800;          
+        }
+
+        &.nav-link-signin {
+          background-color: $primary;
+          color: $white;
+
+          &:hover, &:focus, &:active {
+            background-color: darken($primary, 7%);
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Navbar breakpoint
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .navbar-expand {
+    &#{"-"}#{$breakpoint} {
+      padding: 0;
+
+      @include media-breakpoint-up($breakpoint) {
+        padding: 0;
+      }
+
+      .navbar-toggler {
+        @include media-breakpoint-up($breakpoint) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// 
+// Body class
+// Use to control all header elements
+// 
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .nav-breakpoint {
+    &#{"-"}#{$breakpoint} {
+      @include media-breakpoint-up($breakpoint) {
+        .header-wrap {
+          @include make-row();
+
+          .navbar-brand {
+            position: relative;
+            left: auto;
+            top: auto;
+            margin: 0;
+          }
+
+          .navbar-toggler {
+            display: none;
+          }
+
+          .navbar {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//
+// Search in Header
+// ----------------------
+.t4-header {
+  min-height: 40px;
+  
+  .search {
+    margin-top: $spacer;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 0;
+    }
+  }
+
+  .form-inline {
+    color: $input-color;
+    margin: 0;
+    padding: 0;
+
+    .search {
+      @extend .d-flex;
+
+      // The icon
+      &:before {
+        @include icon("\f002");
+        float: left;
+        padding: $input-btn-padding-y $input-btn-padding-x;
+        background: $input-group-addon-bg;
+        color: $input-group-addon-color;
+        border-right: 1px solid $input-border-color;
+      }
+
+      // The form
+      label {
+        display: none;
+      }
+
+      .form-control {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        margin-top: 0;
+        outline: none;
+      }
+    }
+  }
+}
+
+
+//
+// MASTHEAD BLOCK
+// ------------------------------------
+.t4-masthead {
+  .container {
+    padding-top: $spacer*3;
+    padding-bottom: $spacer*3;
+
+    .page-title {
+      font-weight: 600;
+    }
+  }
+}
+
+
+//
+// SYSTEM MESSAGE
+// ------------------------------------
+// Hide system message in thank you page.
+.hide-system-msg #system-message-container {
+  display: none;
+}
+
+
+//
+// MAIN BODY
+// ------------------------------------
+.t4-main-body {
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+
+  // Styles on Desktop
+  @include media-breakpoint-up(md) {
+    padding-top: $spacer-xxl;
+    padding-bottom: $spacer-xxl;
+  }
+}
+
+// Main Content Container 
+.t4-main {
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+}
+
+// 
+// Acymailing component
+.frontusers_profile {
+  #acyuserinfo {
+    margin-bottom: $spacer;
+
+    > span {
+      display: inline-block;
+      margin-right: $spacer;
+    }
+
+    label {
+      color: $label-color;
+      display: inline-block;
+      font-size: $label-font-size;
+      letter-spacing: .2px;
+      margin-bottom: 0;
+      text-transform: uppercase;
+
+      .acym__users__creation__fields__title {
+        margin-bottom: $spacer/2;
+      }
+    }
+
+    input {
+      background: $input-bg;
+      border: 1px solid $input-border-color;
+      border-radius: $input-border-radius;
+      color: $input-color;
+      padding: $input-padding-y $input-padding-x-lg;
+      transition: all 0.25s ease-in-out;
+    }
+  }
+}
+
+//
+// T4 SIDEBAR
+// ------------------------------------
+.sidebar-l,
+.sidebar-r {
+  padding-top: $spacer*2;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: $spacer*2;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 0;    
+  }
+}
+
+.t4-sidebar {
+  .sidebar-l {
+    margin-bottom: $spacer;
+  }
+
+  // Styles on Breakpoint
+  @include media-breakpoint-down(md) {
+    margin-top: $spacer;
+  }
+
+  .t4-card {
+    margin: $spacer auto;
+  }
+}
+
+
+//
+// BREAKCRUMBS BLOCK
+// ------------------------------------
+.t4-section.t4-breadcrumbs {
+  border-top: 1px solid $border-color;
+
+  ul {
+    background: transparent;
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
+
+//
+// Home page sections
+// ------------------------------------
+#t4-sideshow {
+  .container {
+    color: $white;
+    padding-top: $spacer*5;
+    padding-bottom: 0;
+
+    .btn {
+      margin-bottom: $spacer;
+    }
+  }
+}
+
+
+.t4-section {
+  position: relative;
+
+  > .t4-row {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .bg-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  .t4-section-inner {
+    position: relative;
+  }
+}
+
+//
+// SUBSCRIBE
+// ------------------------------------
+.subscribe-form {
+  margin-bottom: $spacer*2;
+  text-align: center;
+
+  .lead {
+    font-size: $h4-font-size;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer*2;
+  }
+
+  input#email {
+    background: $white;
+    font-size: $font-size-lg;
+    margin-bottom: $spacer;
+    padding: 0.75rem $input-padding-x-lg;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      min-width: 400px;
+      max-width: 400px;
+    }
+  }
+
+  #submit {
+    background-color: $gray-500;
+    border-radius: 5px;
+    color: $white;
+    border: 0;
+    height: 52px;
+    font-family: $font-family-base;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-normal;
+    padding: 0 $spacer*1.5;
+    transition: $btn-transition;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: auto;
+    }
+
+    &:hover, &:focus, &:active {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
+
+// Acymailling form
+.acym_module_form {
+  text-align: center;  
+}
+
+.acym_form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $spacer;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  > div.onefield {
+    margin: 0;
+  }
+
+  > div.fieldacy1 {
+    margin-bottom: $spacer;
+  }
+
+  input {
+    background-color: $white;
+    padding: 1rem $input-padding-x-lg;
+    cursor: default;
+    max-width: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      min-width: 200px;
+      max-width: 200px;      
+    }
+  }
+
+  .fieldacyterms {
+    padding-top: $spacer/2;
+  }
+}
+
+.acym_module_form .tableless {
+  text-align: left;
+  vertical-align: middle;
+
+  .acym__users__creation__fields__title {
+    margin-bottom: $spacer/2;
+  }
+
+  input {
+    width: 100%;
+    max-width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: 400px;
+    }
+  }
+
+  input[type="checkbox"] {
+    display: inline-block;
+    min-width: auto;
+    width: auto;
+  }
+}
+
+table.acym_form {
+  min-width: 300px;
+
+  input {
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+
+.acysubbuttons {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: top;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+
+  .btn.subbutton {
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+// Custom modal
+body #popupModal.social-modal {
+  bottom: auto;
+  margin-left: 0;
+  padding: 0 !important;
+  left: $spacer;
+  right: $spacer;
+  width: auto;
+
+  @include media-breakpoint-up(md) {
+    margin-left: -250px;
+    left: 50%;
+    right: auto;
+    width: 500px;
+  }
+
+  .modal-dialog {
+    margin: 0;
+
+    .close {
+      background-color: $gray-200;
+      border-radius: 50%;
+      height: 30px;
+      line-height: 30px;
+      position: absolute;
+      right: $spacer/2;
+      top: $spacer/2;
+      text-align: center;
+      width: 30px;
+      z-index: 200;
+
+      &:hover, &:focus, &:active {
+        background-color: $primary;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+
+    .modal-content {
+      text-align: center;
+      border: 0;
+
+      .modal-body {
+        padding: $spacer*3 $spacer*2 $spacer*2 $spacer*2;
+      }
+
+      .description {
+        font-size: $font-size-lg;
+        margin-bottom: $spacer;
+        text-align: center;
+      }
+
+      .lead {
+        font-weight: $font-weight-normal;
+        margin-bottom: $spacer;
+      }
+    }
+
+    #share-button {
+      text-align: center;
+      width: 100%;
+    }
+
+    .need-share-button_dropdown {
+      box-shadow: none;
+      display: block;
+      overflow: hidden;
+
+      > span {
+        border-radius: 5px;
+        margin: 0 4px;
+      }
+    }
+
+    .need-share-button_button {
+      display: none;
+    }
+
+    .need-share-button_dropdown {
+      position: relative;
+      left: auto;
+      top: auto;
+    }
+  }
+}
+
+
+//
+// FOOTNAV
+// ------------------------------------
+.t4-footnav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .container {
+    padding-top: $spacer*5;
+    padding-bottom: $spacer*5;
+  }
+
+  .t4-module {
+    margin-bottom: $spacer*1.5;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+
+    .module-inner {
+      padding: 0;
+    }
+
+    .module-title {
+      border: 0;
+
+      span {
+        border: 0;
+        margin: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+
+  // Footnav menu
+  // ------------
+  .navbar {
+    padding: 0;
+    
+    .nav > li {
+      padding: $spacer/2 0;
+
+      a {
+        color: $gray-600;
+        padding: 0;
+        transition: all 0.25s;
+
+        &:hover, &:focus, &:active {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+//
+// FOOTER
+// ------------------------------------
+.t4-footer {
+  font-size: $font-size-sm;
+  
+  .container {
+    padding-top: $spacer-xl;
+    padding-bottom: $spacer-xl;
+  }
+
+  // Footer Modules
+  .footer-position {
+    float: right;
+  }
+
+  // Footer Menu
+  //------------
+  .nav {
+    margin: 0;
+
+    > li {
+      display: inline-block;
+      &:before {
+        @include separator("/");
+        color: $gray-500;
+        margin: 0 6px;
+      }
+
+      &:first-child:before {
+        display: none;
+      }
+    }
+
+    > li > a {
+      color: $body-color;
+      text-transform: uppercase;
+      display: inline-block;
+
+      // Link States
+      &:hover, &:active, &:focus {
+        background: none;
+        border-bottom: 1px solid $body-color;
+      }
+    }
+  }
+
+  // Footer Info
+  //------------
+  .footer-info {
+    p {
+      margin: 0;
+      line-height: 1;
+    }
+
+    small {
+      font-size: 100%;
+
+      // Separator
+      &:after {
+        @include separator("-");
+        color: $gray-500;
+        font-size: $font-size-base;
+        margin: 0 1px 0 2px;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+//
+// MISC.
+// --------------------------------------------------
+
+// Error page
+// ----------
+.t4-error-page {
+  background-color: $gray-100;
+
+  .t4-error-wrap {
+    border: 1px solid $border-color;
+    padding: $spacer;
+  }
+}
+
+// Back to top
+// -----------
+#back-to-top {
+  background: $gray-300;
+  border-radius: 50%;
+  position: fixed;
+  right: $spacer*2;
+  bottom: $spacer/2;
+  height: 36px;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.3s;
+  width: 36px;
+
+  &:hover, &:focus, &:active {
+    background-color: $primary;
+    color: $white;
+  }
+
+  i {
+    color: $white;
+    line-height: 34px;
+  }
+}
+
+.top-away #back-to-top {
+  bottom: $spacer;
+  opacity: 1;
+}

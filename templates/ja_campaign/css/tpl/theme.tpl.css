@@ -1,0 +1,259 @@
+/**
+ *------------------------------------------------------------------------------
+ * @package       T4_Blank - Free Template for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt
+ *------------------------------------------------------------------------------
+**/
+:root {
+  --blue: __color_blue;
+  --indigo: __color_indigo;
+  --purple: __color_purple;
+  --pink: __color_pink;
+  --red: __color_red;
+  --orange: __color_orange;
+  --yellow: __color_yellow;
+  --green: __color_green;
+  --teal: __color_teal;
+  --cyan: __color_cyan;
+  --primary: __color_primary;
+  --secondary: __color_secondary;
+  --success: __color_success;
+  --info: __color_info;
+  --warning: __color_warning;
+  --danger: __color_danger;
+  --light: __color_light;
+  --dark: __color_dark;
+  --white: __color_white;
+  --black: __color_black;
+  --breakpoint-xs: __bp_xs;
+  --breakpoint-sm: __bp_sm;
+  --breakpoint-md: __bp_md;
+  --breakpoint-lg: __bp_lg;
+  --breakpoint-xl: __bp_xl; }
+
+/* for megamenu animation duration */
+.t4-megamenu.animate .dropdown.animating > .dropdown-menu {
+  -webkit-transition-duration: __animation_duration;
+  -o-transition-duration: __animation_duration;
+  transition-duration: __animation_duration; }
+
+html {
+  font-size: __body_font_size; }
+
+body {
+  background-color: __color_white;
+  color: __body_text_color;
+  font-family: __body_font_family;
+  font-size: __body_font_size;
+  font-weight: __body_font_weight;
+  font-style: __body_font_style;
+  line-height: __body_line_height;
+  letter-spacing: __letter_spacing; }
+
+.t4-content {
+  background-image: url(__body_bg_img);
+  background-repeat: __body_bg_img_repeat;
+  background-position: __body_bg_img_position;
+  background-size: __body_bg_img_size;
+  background-attachment: __body_bg_img_attachment;
+  background-color: __body_bg_color; }
+
+a {
+  color: __link_color; }
+
+a:hover {
+  color: __link_hover_color; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: __heading_font_family;
+  font-weight: __heading_font_weight;
+  font-style: __heading_font_style;
+  line-height: __heading_line_height;
+  letter-spacing: __heading_letter_spacing; }
+
+h1, .h1 {
+  font-size: __h1_font_size; }
+
+h2, .h2 {
+  font-size: __h2_font_size; }
+
+h3, .h3 {
+  font-size: __h3_font_size; }
+
+h4, .h4 {
+  font-size: __h4_font_size; }
+
+h5, .h5 {
+  font-size: __h5_font_size; }
+
+h6, .h6 {
+  font-size: __h6_font_size; }
+
+/* COLORS
+--------------------------------------- */
+/* Backgrounds Colors */
+.bg-primary {
+  background-color: __color_primary !important; }
+
+.bg-secondary {
+  background-color: __color_secondary !important; }
+
+.bg-success {
+  background-color: __color_success !important; }
+
+.bg-info {
+  background-color: __color_info !important; }
+
+.bg-warning {
+  background-color: __color_warning !important; }
+
+.bg-danger {
+  background-color: __color_danger !important; }
+
+.bg-light {
+  background-color: __color_light !important; }
+
+.bg-dark {
+  background-color: __color_dark !important; }
+
+.bg-white {
+  background-color: __color_white !important; }
+
+.bg-black {
+  background-color: __color_black !important; }
+
+/* Buttons Colors */
+.btn.btn-primary {
+  background-color: __color_primary !important;
+  border-color: __color_primary !important; }
+
+.btn.btn-primary:hover {
+  opacity: 0.85; }
+
+.btn.btn-secondary {
+  background-color: __color_secondary !important;
+  border-color: __color_secondary !important; }
+
+.btn.btn-secondary:hover {
+  opacity: 0.85; }
+
+.btn.btn-success {
+  background-color: __color_success !important;
+  border-color: __color_success !important; }
+
+.btn.btn-success:hover {
+  opacity: 0.85; }
+
+.btn.btn-info {
+  background-color: __color_info !important;
+  border-color: __color_info !important; }
+
+.btn.btn-info:hover {
+  opacity: 0.85; }
+
+.btn.btn-warning {
+  background-color: __color_warning !important;
+  border-color: __color_warning !important; }
+
+.btn.btn-warning:hover {
+  opacity: 0.85; }
+
+.btn.btn-danger {
+  background-color: __color_danger !important;
+  border-color: __color_danger !important; }
+
+.btn.btn-danger:hover {
+  opacity: 0.85; }
+
+.btn.btn-light {
+  background-color: __color_light !important;
+  border-color: __color_light !important; }
+
+.btn.btn-light:hover {
+  opacity: 0.85; }
+
+.btn.btn-dark {
+  background-color: __color_dark !important;
+  border-color: __color_dark !important; }
+
+.btn.btn-dark:hover {
+  opacity: 0.85; }
+
+.btn.btn-white {
+  background-color: __color_white !important;
+  border-color: __color_white !important; }
+
+.btn.btn-white:hover {
+  opacity: 0.85; }
+
+.btn.btn-black {
+  background-color: __color_black !important;
+  border-color: __color_black !important; }
+
+.btn.btn-black:hover {
+  opacity: 0.85; }
+
+/* Text Colors */
+.text-primary {
+  color: __color_primary !important; }
+
+.text-secondary {
+  color: __color_secondary !important; }
+
+.text-success {
+  color: __color_success !important; }
+
+.text-info {
+  color: __color_info !important; }
+
+.text-warning {
+  color: __color_warning !important; }
+
+.text-danger {
+  color: __color_danger !important; }
+
+.text-light {
+  color: __color_light !important; }
+
+.text-dark {
+  color: __color_dark !important; }
+
+.text-white {
+  color: __color_white !important; }
+
+.text-black {
+  color: __color_black !important; }
+
+/* Badage Colors */
+.badge-primary {
+  background-color: __color_primary; }
+
+.badge-secondary {
+  background-color: __color_secondary; }
+
+.badge-success {
+  background-color: __color_success; }
+
+.badge-info {
+  background-color: __color_info; }
+
+.badge-warning {
+  background-color: __color_warning; }
+
+.badge-danger {
+  background-color: __color_danger; }
+
+.badge-light {
+  background-color: __color_light; }
+
+.badge-dark {
+  background-color: __color_dark; }
+
+.badge-white {
+  background-color: __color_white; }
+
+.badge-black {
+  background-color: __color_black; }

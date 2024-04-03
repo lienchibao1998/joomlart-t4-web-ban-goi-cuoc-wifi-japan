@@ -1,0 +1,1 @@
+jQuery(function(e){e(".fieldAssignment").select2({theme:"foundation"})});

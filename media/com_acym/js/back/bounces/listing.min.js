@@ -1,0 +1,1 @@
+jQuery(function(n){n("#acym__bounce__button__config").on("click",function(){localStorage.setItem("acyconfiguration","bounce_handling")}),acym_helperListing.setSortableListing()});

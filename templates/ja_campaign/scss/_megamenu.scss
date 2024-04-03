@@ -1,0 +1,126 @@
+// EXTEND STYLE IN BASE
+// --------------------
+@import "../../../plugins/system/t4/themes/base/scss/megamenu";
+
+.t4-megamenu {
+
+  // THE MEGAMENU
+  //--------------------------------------------
+  .navbar-nav {
+    > li {
+      > a,
+      > .nav-link {
+        padding-top: $nav-link-padding-y/2;
+        padding-bottom: $nav-link-padding-y/2;
+        font-size: 12px;
+        font-weight: $font-weight-bold;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(md) {
+        }
+
+        &:hover, &:focus, &:active {
+        }
+      }
+
+      // Parent focus
+      &.show {
+        > a, .nav-link {
+          color: $navbar-light-hover-color;
+        }
+      }
+
+      // Active item
+      &.active {
+        > a,
+        > .nav-link {
+        }
+      }
+
+      &:last-child {
+        > a,
+        > .nav-link {
+          border: 0;
+        }
+      }
+    }
+  }
+
+  // Dropdown menu
+  .dropdown-menu {
+    background: $dropdown-bg;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    border-radius: 0;
+    border: 0;
+    min-width: $dropdown-min-width;
+    margin-top: 0;
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+      background: $dropdown-bg;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    }
+
+    li {
+      &:last-child {
+        border: 0;
+      }
+
+      > a,
+      > .nav-link,
+      .dropdown-item {
+        color: $navbar-light-color;
+        padding: $navbar-padding-y/1.5 $navbar-padding-x;
+        white-space: normal;
+
+        &:hover, &:focus, &:active {
+          background-color: $gray-100;
+          color: $navbar-light-hover-color;
+        }
+      }
+
+      &.active {
+        > a {
+          color: $link-hover-color;
+        }
+      }
+    }
+  }
+
+  // Parent hover
+  .parent {
+  }
+
+  .dropdown-toggle {
+    &:after {
+      margin-top: $spacer/2;
+      float: right;
+    }
+  }
+
+  .dropdown {
+    &:hover {
+      > .dropdown-menu {
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+
+  // Modules in Megamenu
+  // -------------------
+  .t4-module {
+    border-radius: 0;
+    border: 0;
+  }
+
+  .t4-module .module-inner {
+  }
+
+}

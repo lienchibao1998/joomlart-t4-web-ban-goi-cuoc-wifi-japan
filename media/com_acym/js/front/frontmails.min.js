@@ -1,0 +1,1 @@
+jQuery(function(e){acym_helperModal.initModal(),acym_helperModal.setTemplateModal()});

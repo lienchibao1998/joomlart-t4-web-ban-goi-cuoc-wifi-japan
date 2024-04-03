@@ -1,0 +1,109 @@
+//
+// OFF-CANVAS CONTENT STYLES
+// -------------------------------------
+// Extend style in base
+// --------------------
+@import "../../../plugins/system/t4/themes/base/scss/_offcanvas";
+
+// Offcanvas toggle
+// -----------------------------------
+.t4-offcanvas-toggle {
+  border: 0;
+  color: $gray-600;
+  display: block;
+  float: left;
+  height: 52px;
+  line-height: 52px;
+  padding: 0;
+  transition: all 0.35s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    color: $gray-800;
+  }
+
+  // Fix: conflict style with T4 Page Builder
+  &.btn {
+    background: transparent;
+    color: $gray-600;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  > span {
+    vertical-align: middle;
+  }
+
+  i {
+    font-size: 22px;
+  }
+}
+
+.nav-breakpoint {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      .t4-offcanvas-toggle {
+        @include media-breakpoint-down($breakpoint) {
+          position: absolute;
+          left: 27px;
+          top: 1px;
+          z-index: 30;
+        }
+      }
+    }
+  }
+}
+
+
+.t4-offcanvas {
+  // Off Canvas Header
+  // -----------------------------------
+  .t4-off-canvas-header {
+  }
+
+  // Off Canvas Body
+  // -----------------------------------  
+  .t4-off-canvas-body {
+    // Nav bar
+    .navbar-nav {
+      > .nav-item.active {
+        > a.nav-link {
+          color: $primary;
+        }
+      }
+
+      .nav-link,
+      .separator {
+        &:hover, &:focus, &:active {
+        }
+      }
+
+      // Dropdown menu
+      .dropdown-menu {
+        .dropdown-item,
+        .nav-link {
+        }
+      }
+    }
+
+    .navbar {
+      &.drilldown-effect {
+        margin-left: -$grid-gutter-width;
+        margin-right: -$grid-gutter-width;
+
+        .sub-menu-back {
+          margin-left: $grid-gutter-width;
+          margin-right: $grid-gutter-width;
+        }
+
+        .nav-item {
+          padding-left: $grid-gutter-width;
+          padding-right: $grid-gutter-width;
+        }
+      }
+    }
+  }
+}

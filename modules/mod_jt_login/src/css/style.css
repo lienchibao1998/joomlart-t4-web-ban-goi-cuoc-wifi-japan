@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'iconslogin';
+  src: url('../font/iconslogin.eot?1280231');
+  src: url('../font/iconslogin.eot?1280231#iefix') format('embedded-opentype'),
+       url('../font/iconslogin.woff2?1280231') format('woff2'),
+       url('../font/iconslogin.woff?1280231') format('woff'),
+       url('../font/iconslogin.ttf?1280231') format('truetype'),
+       url('../font/iconslogin.svg?1280231#iconslogin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#jtl [class^="icon-"]:before,#jtl [class*=" icon-"]:before {
+  font-family: "iconslogin";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+ font-size: 120%;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+@keyframes jtFadeInUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes jtFadeInDown{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}
+
+.icon-eye-icon.icon-eye-slash::before { content: '\e800'; } /* '' */
+.icon-user-icon::before { content: '\e803'; } /* '' */
+.icon-eye-icon::before { content: '\e804'; } /* '' */
+.icon-arrow-icon::before { content: '\e805'; } /* '' */
+
+
+div.jtl-content-register .jtl-buttonsubmit{ margin:15px 0}
+#jtl .btn-close  {box-sizing: content-box;width:22px;height:22px;padding:2px 2px;color:#FFFFFF;background:#fff;border: 0;border-radius:3px 3px 0 0;opacity:1;position:absolute;top:0px;right:0px;-webkit-box-shadow: none;box-shadow:none;opacity:1;z-index:9;}
+#jtl .btn-close.jt-cs::before{ content:"";}
+#jtl .modal.fade.show{opacity:1;}
+
+#jtl .modal-dialog {margin: 30px auto;}
+
+#jtl input {box-shadow: none; border:1px solid #ced4da;line-height: 1;border-radius: 0;color:#666;padding: 0.6rem 1rem;}
+#member-registration input {padding: 0.3rem 0.5rem;width: 100%;}
+#jtl input.form-check-input{ padding:0;}
+#jtl input:autofill {background-image:unset;}
+/**style1*/
+#jtl .modal.fade .modal-dialog {-webkit-transform: scale(0.7);-ms-transform: scale(0.7);-o-transform:  scale(0.7);transform: scale(0.7);-webkit-transition: -webkit-transform 0.1s ease-out;-moz-transition: -moz-transform 0.1s ease-out;-o-transition: -o-transform 0.1s ease-out;transition: transform 0.1s ease-out;opacity:0;}
+#jtl .modal.fade.show .modal-dialog {-webkit-transform:  scale(1);-ms-transform: scale(1);-o-transform:  scale(1);	transform: scale(1);-webkit-transition: -webkit-transform 0.1s ease-out;-moz-transition: -moz-transform 0.1s ease-out;-o-transition: -o-transform 0.1s ease-out;transition: transform 0.1s ease-out;opacity:1;}
+
+/**style2*/
+#jtl.style2 .modal.fade .modal-dialog  {-webkit-transform: translateY(-50px);transform: translateY(-50px);transition: -webkit-transform .3s ease-out;transition: transform .3s ease-outtransition: transform .3s ease-out,-webkit-transform .3s ease-out;opacity:0;}
+#jtl.style2 .modal.fade.show .modal-dialog  {-webkit-transform: none;transform: none;transition: -webkit-transform .3s ease-out;transition: transform .3s ease-out
+	transition: transform .3s ease-out,-webkit-transform .3s ease-out;opacity:1;}
+#jtl.style2 .modal.fade.show{opacity:1;margin: 1.75rem auto;}
+/** style3**/
+#jtl.style3 .modal.fade.show .modal-dialog{-webkit-animation: jtFadeInUp .4s ease-out 0s both;	animation: jtFadeInUp .4s ease-out 0s both;transition:none;}
+
+ 
+#jtl .modal-backdrop.show{ z-index:1;opacity:0.7}
+#jtl .modal-dialog .modal-content {position: relative;background-clip: padding-box;border: 0;border-radius:3px;-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);outline: 0;padding:35px 40px 30px 40px;}
+#jtl .btn-close svg{ vertical-align:top}
+#jtl .jtl-buttonsubmit{ margin:15px 0}
+#jtl .jtl-content-login .form-group input,#jtl .modal-content .mod-login .form-group input{}
+#jtl .btn-secondary.input-password-toggle{ margin-right:0}
+#jtl button.modal-toggle,#jtl button.login-toggle,#jtl button.register-toggle{ padding:6px 15px; margin:0px 10px;box-shadow:none;border: 0;border-radius: 3px;transition: all 0.3s linear 0s;}
+#jtl button.modal-toggle:hover,#jtl button.login-toggle:hover,#jtl button.register-toggle:hover{transition: all 0.3s linear 0s;}
+
+#jtl .form-group > .form-control, .form-group > .form-select,#jtl  .form-group > .custom-select {position: relative;flex: 1 1 auto;width: 1%;min-width: 0;
+}
+#jtl .form-group {border-top-right-radius: 0;border-bottom-right-radius: 0;position: relative;display: flex;flex-wrap: wrap;align-items: stretch;width: 100%;
+}
+#jtl .form-control {max-width: 100%;background-color: white;
+}
+#jtl .form-group-text,#jtl .btn-secondary.input-password-toggle {display: flex;align-items: center;font-size:1rem;font-weight: 400;line-height:1;color: #22262a;text-align: center;white-space: nowrap;background-color: #eaedf0;border: 1px solid #ced4da;border-radius: 0.25rem;margin-left: -1px;border-top-left-radius: 0;border-bottom-left-radius: 0;
+}
+#jtl .visually-hidden, .sr-only,#jtl  .visually-hidden-focusable:not(:focus):not(:focus-within) {position: absolute !important;width: 1px !important;height: 1px !important;padding: 0 !important;margin: -1px !important;overflow: hidden !important;clip: rect(0, 0, 0, 0) !important;white-space: nowrap !important;border: 0 !important;
+}
+.btn-block {display: block;width: 100%;padding: .5rem 1rem;font-size: 1.25rem;line-height:1.5;border-radius: .3rem;color: #fff;background-color: #1a73e8;border-color: #1a73e8;}
+.btn-block:hover {background-color: #0069d9;border-color: #0062cc;}
+#jtl a {color: #1a73e8; text-decoration:none}
+#jtl .username-password{text-align:center}
+#jtl .username-password a{margin:0 5px}
+#jtl .registerlink {border-top: 1px solid #e1e3e8;background: #ecf0f7;color: #495057;font-weight: 500;margin: 0 -40px -45px -40px;padding: 30px 40px;border-radius: 0 0 4px 4px;margin-bottom:-45px!important;text-align:center; display:block;}
+#member-registration .btn-block {margin-top:30px;}
+#jtl .input-group > .custom-select,#jtl .input-group > .form-control,#jtl .input-group > .form-floating,#jtl .input-group > .form-select {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	min-width: 0;
+	position: relative;
+	width: 1%;
+}
+#jtl .input-group {
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	position: relative;
+	width: 100%;
+}
+#jtl .input-group-text {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-color:#f9fafb;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	color: #22262a;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1;
+	padding: .6rem 1rem;
+	text-align: center;
+	white-space: nowrap;
+}
+#jtl .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	margin-left:-1px;
+}

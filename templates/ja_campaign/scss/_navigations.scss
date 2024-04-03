@@ -1,0 +1,323 @@
+// 
+// Main Navigation
+// -----------------------------------
+.navbar {
+
+  // Toggle button
+  .navbar-toggler {
+    border-radius: 0;
+    border: 0;
+    color: $gray-600;
+    display: block;
+    height: 52px;
+    line-height: 52px;
+    padding: 0;
+    transition: all 0.35s;
+
+    i {
+      font-size: 22px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.t4-navbar {
+  position: relative;
+  padding: 0;
+  @include clearfix();
+
+  .navbar {
+    float: left;
+    min-height: 52px;
+
+    &.navbar-expand {
+      @each $breakpoint in map-keys($grid-breakpoints) {
+        $next: breakpoint-next($breakpoint, $grid-breakpoints);
+        $infix: breakpoint-infix($next, $grid-breakpoints);
+
+        &#{$infix} {
+          @include media-breakpoint-down($breakpoint) {
+            float: none;
+            display: block;
+            @include clearfix();
+          }
+        }
+      }
+    }
+  }
+
+  // Dropdown
+  .dropdown-item {
+    &.dropdown-toggle {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        right: $spacer;
+        top: 50%;
+        margin-top: -2px;
+      }
+    }
+  }
+
+  .nav-item {
+    position: relative;
+
+    >a,
+    >span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  #t4-navbar-collapse {
+    display: block !important;
+  }
+
+  .navbar-expand-lg #t4-navbar-collapse {
+    display: flex !important;
+  }
+}
+
+// Show toggler button
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    @include media-breakpoint-up($breakpoint) {
+      .navbar-toggler {
+        display: none;
+      }
+    }
+  }
+}
+
+
+//
+// The Nav
+.t4-main-nav {
+
+  // T4: Need to make the Nav horizontal on lg media.
+  // Because Joomla! add .flex-column to the default menu module
+  @include media-breakpoint-up(lg) {
+    .navbar-nav {
+      flex-direction: row !important;
+    }
+  }
+}
+
+
+//
+// Breadcrumbs
+// -----------------------------------
+.breadcrumb {
+  background-color: transparent;
+  border-radius: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+
+  li.breadcrumb-item {
+    &:first-child {
+      color: $gray-500;
+    }
+  }
+
+  .breadcrumb-item+.breadcrumb-item {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .divider {
+    display: inline-block;
+    padding-right: $spacer/4;
+    text-align: center;
+
+    &:before {
+      color: $gray-400;
+      content: "/";
+      display: inline-block;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  .icon {
+    margin-right: $spacer/2;
+  }
+}
+
+
+//
+// Pagination
+// -----------------------------------
+.pagination {
+  margin: $spacer auto;
+
+  .page-link,
+  .pagenav {
+    &.disabled {
+      color: $gray-500;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+        cursor: default;
+        box-shadow: none;
+      }
+    }
+
+    .icon-chevron-left,
+    .icon-chevron-right {
+      font-size: $font-size-xs;
+      text-align: center;
+      margin-right: $spacer-xs;
+    }
+
+    .icon-chevron-right {
+      margin-right: 0;
+      margin-left: $spacer-xs;
+    }
+  }
+
+}
+
+.counter {
+  margin: 0;
+  color: $gray-dark;
+}
+
+.com-content-category-blog__navigation,
+.com-content-category__navigation,
+.com-contact-featured__pagination,
+.com-newsfeeds-category__pagination,
+.com-tags-tag-list__pagination,
+.com-tags-tag__pagination {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: $grid-gutter-width;
+  gap: $spacer/2;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .pagination {
+    margin: 0 !important;
+    gap: 1px;
+
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+    }
+  }
+}
+
+.com-contact-category {
+  div.pagination {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: $grid-gutter-width;
+    gap: $spacer/2;
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    ul.pagination {
+      margin: 0;
+      gap: 1px;
+
+      @include media-breakpoint-down(sm) {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.com-newsfeeds-category__category {
+  .list {
+    a {
+      word-wrap: break-word;
+    }
+  }
+}
+
+// Navigation bar
+//-----------------------------------
+.pagenav {
+  list-style: none;
+  margin: $spacer*2 0;
+  padding: 0;
+  text-align: right;
+
+  @include clearfix();
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
+  }
+
+  li {
+    display: inline-block;
+
+    &:first-child {
+      margin-right: $spacer/2;
+    }
+
+    &:last-child {
+      margin-left: $spacer/2;
+    }
+
+    a {
+      border: 2px solid $border-color;
+      color: $body-color;
+      padding: $spacer/2 $spacer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: darken($border-color, 3%);
+        color: $link-hover-color;
+        text-decoration: none;
+
+        span:before {
+          color: $link-hover-color;
+        }
+      }
+    }
+
+    span:before {
+      font-size: $font-size-xs;
+    }
+  }
+}
+
+// Tabs 
+// ----------------------------------
+.nav-tabs {
+  &+.tab-content {
+    padding: $spacer 0;
+  }
+
+  .nav-link.active {
+    border-bottom-color: $white;
+  }
+}

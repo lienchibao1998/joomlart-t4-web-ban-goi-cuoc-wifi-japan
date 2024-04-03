@@ -1,0 +1,1 @@
+jQuery(function(i){acym_helperSelectionMultilingual.init("campaign")});

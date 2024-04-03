@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>JT Login</name>
+	<author>JoomlaTema</author>
+	<creationDate>May 2022</creationDate>
+	<copyright>Copyright (C) http://www.joomlatema.net. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomlatema.net</authorEmail>
+	<authorUrl>www.joomlatema.net</authorUrl>
+	<version>1.7</version>
+	<description>JT Login module displays a modal or dropdown Login - Registration form.</description>
+	<namespace path="src">Joomla\Module\Login</namespace>
+	<files>
+		<filename module="MOD_JT_LOGIN">mod_jt_login.php</filename>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_jt_login.ini</language>
+		<language tag="fr-FR">language/fr-FR.mod_jt_login.ini</language>
+	</languages>
+	<updateservers>
+        <server type="extension" priority="1" name="JT Login Updates">http://joomlatema.net/update_server/joomla4/jt_login.xml</server>
+    </updateservers>
+	<help key="Site_Modules:_Login" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="Joomla\Component\Menus\Administrator\Field">
+			
+			<field
+					name="FormType"
+					type="list"
+					label="MOD_JT_LOGIN_FIELD_FORMTYPE_LABEL"
+					default="dropdown"
+					>
+					<option value="dropdown">JDROPDOWN</option>
+					<option value="modal">JMODAL</option>
+				</field>
+					<field
+					name="FormStyle"
+					type="list"
+					label="MOD_JT_LOGIN_FIELD_FORMSTYLE_LABEL"
+					showon="FormType:modal"
+					default="1"
+					>
+					<option value="1">MOD_JT_LOGIN_STYLE1</option>
+					<option value="2">MOD_JT_LOGIN_STYLE2</option>
+					<option value="3">MOD_JT_LOGIN_STYLE3</option>
+				</field>
+				<field
+					name="ModalTopPosition"
+					type="text"
+					default="10%"
+					showon="FormType:modal"
+					label="MOD_JT_LOGIN_FIELD_MODALTOPPOS_LABEL"
+					description="MOD_JT_LOGIN_FIELD_MODALTOPPOS_LABEL_DESC"
+					filter="safehtml"
+					cols="30"
+					rows="5"
+				/>
+				
+				<field
+					name="ModalMaxWidth"
+					type="text"
+					default="380px"
+					showon="FormType:modal"
+					label="MOD_JT_LOGIN_FIELD_MODALMAXWIDTH_LABEL"
+					description="MOD_JT_LOGIN_FIELD_MODALMAXWIDTH_LABEL_DESC"
+					filter="safehtml"
+					cols="30"
+					rows="5"
+				/>
+				
+				<field
+					name="LoginTitle"
+					type="text"
+					default=""
+					label="MOD_JT_LOGIN_FIELD_LOGINTITLE_LABEL"
+					filter="safehtml"
+					cols="30"
+					rows="5"
+				/>
+				<field
+					name="LoginBg"
+					type="color"
+					default="#ffffff" 
+					format="hex"
+					label="MOD_JT_LOGIN_FIELD_LOGINBG_LABEL"
+
+				/>
+				<field name="LoginTitleClass" type="text" size="10" default="h3" label="MOD_JT_LOGIN_FIELD_LOGINTITLECLASS_LABEL" />
+				
+				<field
+					name="ShowRegister"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_LOGIN_FIELD_SHOWREGISTER_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="RegisterTitle"
+					type="text"
+					default=""
+					showon="ShowRegister:1"
+					label="MOD_JT_LOGIN_FIELD_REGISTERTITLE_LABEL"
+					description="MOD_JT_LOGIN_FIELD_REGISTERTITLE_LABEL_DESC"
+					filter="safehtml"
+					cols="30"
+					rows="5"
+				/>
+				
+				<field name="RegisterTitleClass" type="text" size="10" showon="ShowRegister:1" default="h3" label="MOD_JT_LOGIN_FIELD_REGISTERTITLECLASS_LABEL" description="MOD_JT_LOGIN_FIELD_REGISTERTITLECLASS_LABEL_DESC"/>
+				<field
+					name="pretext"
+					type="textarea"
+					label="MOD_JT_LOGIN_FIELD_PRE_TEXT_LABEL"
+					filter="safehtml"
+					cols="30"
+					rows="5"
+				/>
+
+				<field
+					name="posttext"
+					type="textarea"
+					label="MOD_JT_LOGIN_FIELD_POST_TEXT_LABEL"
+					filter="safehtml"
+					cols="30"
+					rows="5"
+				/>
+				
+				<field
+					name="LoginButText"
+					type="text"
+					default="Login"
+					label="MOD_JT_LOGIN_FIELD_LOGINBUTTON_TEXT_LABEL"
+					filter="safehtml"
+					cols="30"
+					rows="5"
+				/>
+				
+				<field
+					name="RegisterButText"
+					type="text"
+					default="Register"
+					label="MOD_JT_LOGIN_FIELD_REGISTERBUTTON_TEXT_LABEL"
+					filter="safehtml"
+					cols="30"
+					rows="5"
+				/>
+				
+				<field
+					name="login"
+					type="modal_menu"
+					label="MOD_JT_LOGIN_FIELD_LOGIN_REDIRECTURL_LABEL"
+					description="MOD_JT_LOGIN_FIELD_LOGIN_REDIRECTURL_DESC"
+					disable="separator,alias,heading,url"
+					select="true"
+					new="true"
+					edit="true"
+					clear="true"
+					>
+					<option value="">JOPTION_SELECT_MENU_ITEM</option>
+				</field>
+
+				<field
+					name="logout"
+					type="modal_menu"
+					label="MOD_JT_LOGIN_FIELD_LOGOUT_REDIRECTURL_LABEL"
+					description="MOD_JT_LOGIN_FIELD_LOGOUT_REDIRECTURL_DESC"
+					disable="separator,alias,heading,url"
+					select="true"
+					new="true"
+					edit="true"
+					clear="true"
+					>
+					<option value="">JOPTION_SELECT_MENU_ITEM</option>
+				</field>
+
+				<field
+					name="customRegLinkMenu"
+					type="modal_menu"
+					label="MOD_JT_LOGIN_FIELD_REGISTRATION_MENU_LABEL"
+					disable="separator,alias,heading,url"
+					select="true"
+					new="true"
+					edit="true"
+					clear="true"
+					>
+					<option value="">JOPTION_SELECT_MENU_ITEM</option>
+				</field>
+
+				<field
+					name="greeting"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_LOGIN_FIELD_GREETING_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="name"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_LOGIN_FIELD_NAME_LABEL"
+					default="0"
+					filter="integer"
+					showon="greeting:1"
+					>
+					<option value="0">mod_jt_login_VALUE_NAME</option>
+					<option value="1">mod_jt_login_VALUE_USERNAME</option>
+				</field>
+
+				<field
+					name="profilelink"
+					type="radio"
+					label="MOD_JT_LOGIN_FIELD_PROFILE_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="usetext"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_LOGIN_FIELD_USETEXT_LABEL"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">mod_jt_login_VALUE_ICONS</option>
+					<option value="1">mod_jt_login_VALUE_TEXT</option>
+				</field>
+				<field
+					name="ShowForgotPassw"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_LOGIN_FIELD_SHOWFORGOTPASSW_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

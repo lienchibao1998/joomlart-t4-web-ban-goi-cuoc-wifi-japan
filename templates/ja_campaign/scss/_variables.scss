@@ -1,0 +1,753 @@
+/**
+ *------------------------------------------------------------------------------
+ * @package       T4_Blank - Free Template for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt
+ *------------------------------------------------------------------------------
+**/
+
+//
+// T4 Additional Variables
+// --------------------------------------------------
+
+// Opacity Levels
+// Mostly use for text transparency on different color backgrounds
+// Higher level means lighter or darker text color, depend on text color
+$opacity-base:          1;
+$opacity-lv1:           0.87;
+$opacity-lv2:           0.70;
+$opacity-lv3:           0.54;
+$opacity-lv4:           0.38;
+$opacity-lv5:           0.12;
+$opacity-lv6:           0.08;
+
+
+// Depth
+// Defining the depth level
+// https://material.google.com/material-design/elevation-shadows.html#elevation-shadows-object-relationships
+
+$z-depth-0:             none;
+// 2dp
+$z-depth-1:             0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+// 3dp
+$z-depth-2:             0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12), 0 3px 3px -2px rgba(0,0,0,.4);
+// 4dp
+$z-depth-3:             0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.4);
+// 6dp
+$z-depth-4:             0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.4);
+// 8dp
+$z-depth-5:             0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12), 0 5px 5px -3px rgba(0,0,0,.4);
+// 16dp
+$z-depth-6:             0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.4);
+// 24dp
+$z-depth-7:             0 9px 46px 8px rgba(0,0,0,.14), 0 24px 38px 3px rgba(0,0,0,.12), 0 11px 15px -7px rgba(0,0,0,.4);
+
+// Simplify Shadow Value
+$s-z-depth-1:           0 2px 1px rgba(0,0,0,0.3);
+$s-z-depth-2:           0 3px 1.5px rgba(0,0,0,0.4);
+$s-z-depth-3:           0 4px 2px rgba(0,0,0,0.4);
+$s-z-depth-4:           0 6px 3px rgba(0,0,0,0.4);
+$s-z-depth-5:           0 8px 4px rgba(0,0,0,0.4);
+$s-z-depth-6:           0 16px 8px rgba(0,0,0,0.4);
+$s-z-depth-7:           0 24px 12px rgba(0,0,0,0.4);
+
+$z-depth-focus:         0 0 8px rgba(0,0,0,.18), 0 8px 16px rgba(0,0,0,.36);
+$z-depth-transition:    box-shadow .28s cubic-bezier(.4,0,.2,1);
+
+
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+// Grays
+$white:    #fff;
+$gray-100: #f0f1f4;
+$gray-200: #d3d5df;
+$gray-300: #b7bbc9;
+$gray-400: #9da2b4;
+$gray-500: #858a9e;
+$gray-600: #6e7489;
+$gray-700: #585e73;
+$gray-800: #444a5e;
+$gray-900: #323748;
+$black:    #000;
+
+
+// T4: Add more grays variables for easy styling
+$gray:          $gray-500;
+$gray-dark:     $gray-600;
+$gray-darker:   $gray-800;
+$gray-light:    $gray-400;
+$gray-lighter:  $gray-200;
+
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+);
+
+// Accent colors
+$blue:      #267ffd;
+$indigo:    #3F51B5;
+$purple:    #9C27B0;
+$pink:      #E91E63;
+$red:       #F44336;
+$orange:    #FF9800;
+$yellow:    #FDD835;
+$green:     #4CAF50;
+$teal:      #009688;
+$cyan:      #00BCD4;
+
+$colors: (
+  blue:     $blue,
+  indigo:   $indigo,
+  purple:   $purple,
+  pink:     $pink,
+  red:      $red,
+  orange:   $orange,
+  yellow:   $yellow,
+  green:    $green,
+  teal:     $teal,
+  cyan:     $cyan
+);
+
+// Brand colors
+$primary:       $blue;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-200;
+$dark:          $gray-800;
+
+$facebook-brand:  #4267B2;
+$twitter-brand:   #1DA1F2;
+$linked-in-brand: #0077B5;
+$pinterest-brand: #E60023;
+
+// T4: Add other Brand colors
+$brand-facebook:        #3b5998;
+$brand-twitter:         #3a92c8;
+$brand-google:          #dd4b39;
+$brand-dribbble:        #c32361;
+$brand-youtube:         #b00;
+$brand-pinterest:       #cb2027;
+
+// Theme colors
+$theme-colors: (
+  primary:    $blue,
+  secondary:  $gray-600,
+  success:    $green,
+  info:       $cyan,
+  warning:    $yellow,
+  danger:     $red,
+  light:      $gray-200,
+  dark:       $gray-800,
+  white:      $white,
+  black:      $black
+);
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+// T4 Note: To make this option work, remember to use  @include border-radius()
+// whenever you want to style border-radius
+$enable-rounded:            true;
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+$spacer:      1rem;
+
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+);
+
+// T4: Add more Spacer variables
+$spacer-xs:   0.25rem;
+$spacer-sm:   0.5rem;
+$spacer-lg:   1.5rem;
+$spacer-xl:   2rem;
+$spacer-xxl:  3rem;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg:                   $white;
+$body-color:                #67758d;
+
+
+// Links
+//
+// Style anchor elements.
+$link-color:                $primary;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-decoration:     underline !default;
+
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom:   1rem !default;
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$media-breakpoint-up: grid-breakpoints(md);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1152px
+);
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:                12;
+$grid-gutter-width:           40px;
+
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+$line-height-lg:              1.5;
+$line-height-sm:              1.5;
+
+$border-width:                1px;
+$border-color:                rgba($gray-darker,$opacity-lv5);
+
+$border-radius:               5px;
+$border-radius-lg:            7px;
+$border-radius-sm:            3px;
+
+$component-active-color:      $white;
+$component-active-bg:         theme-color("primary");
+
+$caret-width:                 .3em;
+
+$transition-base:             all .2s ease-in-out;
+$transition-fade:             opacity .15s linear;
+$transition-collapse:         height .35s ease;
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif:      Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif:           "Roboto Slab", Georgia, Times, serif;  // T4: Add Serif font
+$font-family-monospace:       "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:            $font-family-sans-serif;
+
+$font-size-root:              15px; // T4: Add $font-size-root for easier control overall Font Size
+$font-size-xs:                ($font-size-base * .725);
+$font-size-sm:                ($font-size-base * .875);
+$font-size-base:              1rem; // T4: Base on the $font-size-root
+$font-size-lg:                ($font-size-base * 1.25);
+
+
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-semibold:        500;
+$font-weight-bold:            600;
+
+$font-weight-base:            $font-weight-normal;
+$line-height-base:            1.5;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$enable-responsive-font-sizes: true;
+
+$headings-margin-bottom:      ($spacer / 2);
+$headings-font-family:        inherit;
+$headings-font-weight:        500;
+$headings-line-height:        1.2;
+$headings-color:              inherit;
+
+$display1-size:               6rem;
+$display2-size:               5.5rem;
+$display3-size:               4.5rem;
+$display4-size:               3.5rem;
+
+$display1-weight:             300;
+$display2-weight:             300;
+$display3-weight:             300;
+$display4-weight:             300;
+$display-line-height:         $headings-line-height;
+
+$lead-font-size:              ($font-size-base * 1.25);
+$lead-font-weight:            300;
+
+$small-font-size:             $font-size-xs;
+
+$text-muted:                  $gray-600;
+
+$blockquote-small-color:      $gray-600;
+$blockquote-font-size:        ($font-size-base * 1.25);
+
+$hr-border-color:             rgba($black,.1);
+$hr-border-width:             $border-width;
+
+$dt-font-weight:              $font-weight-bold;
+
+$list-inline-padding:         5px;
+
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding:          .75rem;
+$table-cell-padding-sm:       .3rem;
+
+$table-bg:                    transparent;
+$table-accent-bg:             rgba($black,0.04);
+$table-hover-bg:              rgba($orange,0.08);
+$table-active-bg:             $table-hover-bg;
+
+$table-border-width:          $border-width;
+$table-border-color:          $gray-200;
+
+$table-head-bg:               $gray-200;
+$table-head-color:            $gray-700;
+
+$table-dark-bg:               $gray-900;
+$table-dark-accent-bg:        rgba($white, .05);
+$table-dark-hover-bg:         rgba($white, .075);
+$table-dark-border-color:     lighten($gray-900, 7.5%);
+$table-dark-color:            $body-bg;
+
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y:         1rem;
+$input-btn-padding-x:         .75rem;
+$input-btn-line-height:       $line-height-base;
+
+$input-btn-focus-width:       .2rem;
+$input-btn-focus-color:       rgba(theme-color("primary"), .25);
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color;
+
+$input-btn-padding-y-sm:      .25rem;
+$input-btn-padding-x-sm:      .5rem;
+$input-btn-line-height-sm:    $line-height-sm;
+
+$input-btn-padding-y-lg:      1.5rem;
+$input-btn-padding-x-lg:      1rem;
+$input-btn-line-height-lg:    $line-height-lg;
+
+$input-btn-border-width:      $border-width;
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y:               .75rem;
+$btn-padding-x:               1rem;
+$btn-font-family:             $input-btn-font-family;
+$btn-font-size:               $input-btn-font-size;
+$btn-line-height:             $input-btn-line-height;
+$btn-white-space:             null; // Set to `nowrap` to prevent text wrapping
+
+$btn-padding-y-sm:            .25rem;
+$btn-padding-x-sm:            .5rem;
+$btn-font-size-sm:            $input-btn-font-size-sm;
+$btn-line-height-sm:          $input-btn-line-height-sm;
+
+$btn-padding-y-lg:            1rem;
+$btn-padding-x-lg:            1.5rem;
+$btn-font-size-lg:            $input-btn-font-size-lg;
+$btn-line-height-lg:          $input-btn-line-height-lg;
+
+$btn-border-width:            $input-btn-border-width;
+
+$btn-font-weight:             $font-weight-normal;
+$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
+$btn-focus-width:             $input-btn-focus-width;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+$btn-disabled-opacity:        .65;
+$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125);
+
+$btn-link-disabled-color:     $gray-600;
+
+$btn-block-spacing-y:         .5rem;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           $border-radius;
+$btn-border-radius-lg:        $border-radius-lg;
+$btn-border-radius-sm:        $border-radius-sm;
+
+$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+
+// Forms
+// -------------------------
+$label-color:                           $gray-500;
+$label-font-size:                       $font-size-sm;
+
+$label-margin-bottom:                   .5rem;
+
+$input-padding-y:                       $input-btn-padding-y;
+$input-padding-x:                       $input-btn-padding-x;
+$input-font-family:                     $input-btn-font-family;
+$input-font-size:                       $input-btn-font-size;
+$input-font-weight:                     $font-weight-base;
+$input-line-height:                     $input-btn-line-height;
+
+$input-padding-y-sm:                    $input-btn-padding-y-sm;
+$input-padding-x-sm:                    $input-btn-padding-x-sm;
+$input-font-size-sm:                    $input-btn-font-size-sm;
+$input-line-height-sm:                  $input-btn-line-height-sm;
+
+$input-padding-y-lg:                    $input-btn-padding-y-lg;
+$input-padding-x-lg:                    $input-btn-padding-x-lg;
+$input-font-size-lg:                    $input-btn-font-size-lg;
+$input-line-height-lg:                  $input-btn-line-height-lg;
+
+$input-bg:                              transparent;
+$input-disabled-bg:                     $gray-200;
+
+$input-color:                           #67758d;
+$input-border-color:                    #ccd2dd;
+$input-btn-border-width:                $border-width; // For form controls and buttons
+$input-box-shadow:                      inset 0 1px 1px rgba($black,.075);
+
+$input-border-radius:                   $border-radius;
+$input-border-radius-lg:                $border-radius-lg;
+$input-border-radius-sm:                $border-radius-sm;
+
+$input-focus-bg:                        $input-bg;
+$input-focus-border-color:              $primary;
+$input-focus-color:                     $input-color;
+
+$input-placeholder-color:               $gray-600;
+
+$input-height-border:                   $input-btn-border-width * 2;
+
+$input-height-inner:                    ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2);
+$input-height:                          calc(#{$input-height-inner} + #{$input-height-border});
+
+$form-group-margin-bottom:              1rem;
+
+$input-group-addon-color:               $input-color;
+$input-group-addon-bg:                  $gray-200;
+$input-group-addon-border-color:        $input-border-color;
+
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-min-width:                15rem;
+$dropdown-padding-y:                .5rem;
+$dropdown-spacer:                   .125rem;
+$dropdown-bg:                       $white;
+$dropdown-border-color:             rgba($black,.15);
+$dropdown-border-width:             $border-width;
+$dropdown-divider-bg:               $gray-200;
+$dropdown-box-shadow:               0 .5rem 1rem rgba($black,.175);
+
+$dropdown-link-color:               $gray-900;
+$dropdown-link-hover-color:         darken($gray-900, 5%);
+$dropdown-link-hover-bg:            $gray-100;
+
+$dropdown-link-active-color:        $component-active-color;
+$dropdown-link-active-bg:           $component-active-bg;
+
+$dropdown-link-disabled-color:      $gray-600;
+
+$dropdown-item-padding-y:           .25rem;
+$dropdown-item-padding-x:           1.5rem;
+
+$dropdown-header-color:             $gray-600;
+
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-modal-backdrop:             1040;
+$zindex-modal:                      1050;
+$zindex-popover:                    1060;
+$zindex-tooltip:                    1070;
+
+
+// Navs
+
+$nav-link-padding-y:                $spacer;
+$nav-link-padding-x:                $spacer;
+$nav-link-disabled-color:           $gray-600;
+
+$nav-tabs-border-color:             #ddd;
+$nav-tabs-border-width:             $border-width;
+$nav-tabs-border-radius:            $border-radius;
+$nav-tabs-link-hover-border-color:  $gray-200;
+$nav-tabs-link-active-color:        $gray-700;
+$nav-tabs-link-active-bg:           $body-bg;
+$nav-tabs-link-active-border-color: #ddd;
+
+$nav-pills-border-radius:           $border-radius;
+$nav-pills-link-active-color:       $component-active-color;
+$nav-pills-link-active-bg:          $component-active-bg;
+
+
+// Navbar
+
+$navbar-padding-y:                  $spacer;
+$navbar-padding-x:                  $spacer;
+
+$navbar-brand-font-size:            $font-size-lg !default;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+$nav-link-height:                   ($font-size-base * $line-height-base + $nav-link-padding-y * 2);
+$navbar-brand-height:               $navbar-brand-font-size * $line-height-base;
+$navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2;
+
+$navbar-dark-color:                 rgba($white, .5);
+$navbar-dark-hover-color:           rgba($white, .75);
+$navbar-dark-active-color:          $white;
+$navbar-dark-disabled-color:        rgba($white, .25);
+$navbar-dark-toggler-border-color:  rgba($white, .1);
+
+$navbar-light-color:                rgba($black, .7);
+$navbar-light-hover-color:          rgba($black, .8);
+$navbar-light-active-color:         rgba($black, .9);
+$navbar-light-disabled-color:       rgba($black, .3);
+$navbar-light-toggler-border-color: rgba($black, .1);
+
+$navbar-light-brand-color:                $navbar-light-active-color;
+$navbar-light-brand-hover-color:          $navbar-light-active-color;
+$navbar-dark-brand-color:                 $navbar-dark-active-color;
+$navbar-dark-brand-hover-color:           $navbar-dark-active-color;
+
+// Pagination
+$pagination-padding-y:              .5rem;
+$pagination-padding-x:              .75rem;
+$pagination-padding-y-sm:           .25rem;
+$pagination-padding-x-sm:           .5rem;
+$pagination-padding-y-lg:           .75rem;
+$pagination-padding-x-lg:           1.5rem;
+$pagination-line-height:            1.25;
+
+$pagination-color:                  $link-color;
+$pagination-bg:                     $white;
+$pagination-border-width:           $border-width;
+$pagination-border-color:           #ddd;
+
+$pagination-hover-color:            $link-hover-color;
+$pagination-hover-bg:               $gray-200;
+$pagination-hover-border-color:     #ddd;
+
+$pagination-active-color:           $white;
+$pagination-active-bg:              theme-color("primary");
+$pagination-active-border-color:    theme-color("primary");
+
+$pagination-disabled-color:         $gray-600;
+$pagination-disabled-bg:            $white;
+$pagination-disabled-border-color:  #ddd;
+
+
+// Jumbotron
+$jumbotron-padding:                 2rem;
+$jumbotron-bg:                      $gray-200;
+
+
+// Cards
+$card-spacer-y:                     .75rem;
+$card-spacer-x:                     1.25rem;
+$card-border-width:                 $border-width;
+$card-border-radius:                $border-radius;
+$card-border-color:                 $border-color;
+$card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width});
+$card-cap-bg:                       rgba($black, .03);
+$card-bg:                           $white;
+
+$card-img-overlay-padding:          1.25rem;
+
+$card-group-margin:                 ($grid-gutter-width / 2);
+$card-deck-margin:                  $card-group-margin;
+
+$card-columns-count:                3;
+$card-columns-gap:                  1.25rem;
+$card-columns-margin:               $card-spacer-y;
+
+
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+$alert-padding-y:                   .75rem;
+$alert-padding-x:                   1.25rem;
+$alert-margin-bottom:               1rem;
+$alert-border-radius:               $border-radius;
+$alert-link-font-weight:            $font-weight-bold;
+$alert-border-width:                $border-width;
+
+
+// List group
+$list-group-bg:                     $white;
+$list-group-border-color:           rgba($black,.125);
+$list-group-border-width:           $border-width;
+$list-group-border-radius:          $border-radius;
+
+$list-group-item-padding-y:         .75rem;
+$list-group-item-padding-x:         1.25rem;
+
+$list-group-hover-bg:               $gray-100;
+$list-group-active-color:           $component-active-color;
+$list-group-active-bg:              $component-active-bg;
+$list-group-active-border-color:    $list-group-active-bg;
+
+$list-group-disabled-color:         $gray-600;
+$list-group-disabled-bg:            $list-group-bg;
+
+$list-group-action-color:           $gray-700;
+$list-group-action-hover-color:     $list-group-action-color;
+
+$list-group-action-active-color:    $body-color;
+$list-group-action-active-bg:       $gray-200;
+
+
+// Image thumbnails
+$thumbnail-padding:                 .25rem;
+$thumbnail-bg:                      $body-bg;
+$thumbnail-border-width:            $border-width;
+$thumbnail-border-color:            #ddd;
+$thumbnail-border-radius:           $border-radius;
+$thumbnail-box-shadow:              0 1px 2px rgba($black,.075);
+$thumbnail-transition:              all .2s ease-in-out;
+
+
+// Figures
+$figure-caption-font-size:          90%;
+$figure-caption-color:              $gray-600;
+
+
+// Breadcrumbs
+$breadcrumb-padding-y:              .75rem;
+$breadcrumb-padding-x:              1rem;
+$breadcrumb-item-padding:           .5rem;
+
+$breadcrumb-margin-bottom:          1rem;
+
+$breadcrumb-bg:                     $gray-300;
+$breadcrumb-divider-color:          $gray-600;
+$breadcrumb-active-color:           $gray-600;
+$breadcrumb-divider:                "/";
+
+
+// Close
+$close-font-size:                   $font-size-base * 1.5;
+$close-font-weight:                 $font-weight-bold;
+$close-color:                       $black;
+$close-text-shadow:                 0 1px 0 $white;
+
+// Code
+$code-font-size:                    90%;
+$code-padding-y:                    .2rem;
+$code-padding-x:                    .4rem;
+$code-color:                        #bd4147;
+$code-bg:                           $gray-100;
+
+$kbd-color:                         $white;
+$kbd-bg:                            $gray-900;
+
+$pre-color:                         $gray-900;
+$pre-scrollable-max-height:         340px;
+
+
+//
+// T4 GLOBAL STYLES
+// --------------------------------------------------
+// Module Styles
+// -------------------------
+// Module General
+$t4-module-bg:                  transparent;
+$t4-module-color:               inherit;
+$t4-module-padding:             0;
+$t4-module-border:              1px solid $gray-200;
+
+// Module Title
+$t4-module-title-bg:            $t4-module-bg;      // inherit from $t4-module-bg
+$t4-module-title-color:         $t4-module-color;   // inherit from $t4-module-color
+$t4-module-title-padding:       $t4-module-padding;
+
+// Module Content
+$t4-module-content-bg:          $t4-module-bg;      // inherit from $t4-module-bg
+$t4-module-content-color:       $t4-module-color;   // inherit from $t4-module-color
+$t4-module-content-padding:     $t4-module-padding;
+
+
+//
+// T4 ADD-ONS
+// --------------------------------------------------
+// Off-Canvas
+// -------------------------
+
+// Off-Canvas Width
+$t4-off-canvas-width:                 250px;
+$t4-off-canvas-background:            $white;
+
+// Off-Canvas Header
+$t4-off-canvas-header-background:     $gray-100;
+$t4-off-canvas-header-text-color:     $body-color;
+
+// Off-Canvas Body
+$t4-off-canvas-background:            $body-bg;
+$t4-off-canvas-text-color:            $body-color;
+
+$t4-off-canvas-link-color:            $link-color;
+$t4-off-canvas-link-hover-color:      $link-hover-color;
+
+$t4-off-canvas-headings-color:        inherit;

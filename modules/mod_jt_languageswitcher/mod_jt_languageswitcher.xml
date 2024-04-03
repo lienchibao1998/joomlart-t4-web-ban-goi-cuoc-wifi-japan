@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>JT Language Switcher</name>
+	<author>joomlatema</author>
+	<creationDate>March, 2022</creationDate>
+	<copyright>Copyright (C) http://www.joomlatema.net. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomlatema.net</authorEmail>
+	<authorUrl>www.joomlatema.net</authorUrl>
+	<version>1.2</version>
+	<description>MOD_JTLANGSW_XML_DESCRIPTION</description>
+	<namespace path="src">Joomla\Module\Languages</namespace>
+	<files>
+		<filename module="mod_jt_languageswitcher">mod_jt_languageswitcher.php</filename>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<folder>assets</folder>
+	</files>
+	<updateservers>
+        <server type="extension" priority="1" name="JT Search Updates">http://joomlatema.net/update_server/joomla4/jt_languageswitcher.xml</server>
+    </updateservers>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_jt_languageswitcher.ini</language>
+		<language tag="en-GB">language/en-GB/mod_jt_languageswitcher.sys.ini</language>
+		<language tag="tr-TR">language/tr-TR/mod_jt_languageswitcher.ini</language>
+		<language tag="tr-TR">language/tr-TR/mod_jt_languageswitcher.sys.ini</language>
+	</languages>
+	<help key="Site_Modules:_Language_Switcher" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+	
+			<field
+				name="language"
+				type="list"
+				label="JFIELD_LANGUAGE_LABEL"
+				description="JFIELD_MODULE_LANGUAGE_DESC"
+				validate="options"
+				>
+				<option value="*">JALL</option>
+			</field>
+
+			<field
+					name="ShowTooltip"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JTLANGSW_SHOWTOOLTIP_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="ShowNameCode"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JTLANGSW_SHOWNAMECODE_LABEL"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="full_name"
+					type="list"
+					class="btn-group"
+					label="MOD_JTLANGSW_FULLNAME_LABEL"
+					description="MOD_JTLANGSW_FULLNAME_LABEL_DESC"
+					default="0"
+					filter="integer"
+					showon="ShowNameCode:1"
+					>
+					<option value="0">LANG_CODE</option>
+					<option value="1">FULL_NAME</option>
+				</field>
+				<field
+					name="dropdownimage"
+					type="radio"
+					showon="ShowNameCode:1"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JTLANGSW_USEIMAGE_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="FlagFloat"
+					type="list"
+					class="btn-group"
+					label="MOD_JTLANGSW_FLAGFLOAT_LABEL"
+					default="left"
+					showon="ShowNameCode:1"
+					>
+					<option value="left">JGLOBAL_LEFT</option>
+					<option value="right">JGLOBAL_RIGHT</option>
+				</field>
+				
+				<field name="FlagMarginValue" type="text" default="5" showon="ShowNameCode:1"  label="MOD_JTLANGSW_FLAG_MARGIN_LABEL" description="MOD_JTLANGSW_FLAG_MARGIN_DESC" />
+				<field name="FlagWidth" type="text" default="30"  label="MOD_JTLANGSW_FLAG_WIDTH_LABEL" description="MOD_JTLANGSW_FLAG_WIDTH_DESC" />
+				<field name="FlagHeight" type="text" default="30" label="MOD_JTLANGSW_FLAG_HEIGHT_LABEL" description="MOD_JTLANGSW_FLAG_HEIGHT_DESC" />
+				<field name="Flagborder" type="text" default="2px solid #FFFFFF" showon="ShowNameCode:1"  label="MOD_JTLANGSW_FLAG_BORDER_LABEL" description="MOD_JTLANGSW_FLAG_BORDER_DESC" />
+				<field name="FlagborderRad" type="text" default="50%" showon="ShowNameCode:1"  label="MOD_JTLANGSW_FLAG_BORDERRADIUS_LABEL" description="MOD_JTLANGSW_FLAG_BORDERRADIUS_DESC" />
+				<field
+					name="show_activelang"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JTLANGSW_SHOWACTIVE_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+			<field name="PositionTop" type="text" default="0px"  label="MOD_JTLANGSW_POSITIONTOP_LABEL" description="MOD_JTLANGSW_POSITIONTOP_DESC" />
+			<field name="PositionTopMobile" type="text" default="10px" label="MOD_JTLANGSW_POSITIONTOPMOBILE_LABEL" description="MOD_JTLANGSW_POSITIONTOPMOBILE_DESC" />
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

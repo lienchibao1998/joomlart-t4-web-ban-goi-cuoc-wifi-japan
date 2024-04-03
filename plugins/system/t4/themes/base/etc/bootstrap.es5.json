@@ -1,0 +1,183 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "t4.bootstrap.es5",
+  "version": "4.0.0",
+  "description": "Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "bootstrap.es5.css",
+      "type": "style",
+      "uri": "vendors/bootstrap5/js/bootstrap.min.css",
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.css.grid",
+      "type": "style",
+      "uri": "vendors/bootstrap5/js/bootstrap-grid.min.css",
+      "dependencies": [
+        "bootstrap.css"
+      ],
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.es5",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/bootstrap.bundle.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.alert",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/alert.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.button",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/button.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.carousel",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/carousel.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.collapse",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/collapse.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.dropdown",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/dropdown.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.modal",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/modal.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.offcanvas",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/offcanvas.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.popover",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/popover.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.scrollspy",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/scrollspy.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.tab",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/tab.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    },
+    {
+      "name": "bootstrap.toast",
+      "type": "script",
+      "uri": "vendors/bootstrap5/js/toast.js",
+      "dependencies": [
+        "bootstrap.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "package": "bootstrap.es5",
+      "version": "5.0.2"
+    }
+  ]
+}

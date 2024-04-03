@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="custom-field" label="Extra Field" description="">
+			<field name="mod-heading" type="textarea" default="" label="TPL_MOD_HEADING_LABEL" description="TPL_MOD_HEADING_DESC" filter="RAW" />
+			
+			<field name="mod-sub-heading" type="textarea" default="" label="TPL_MOD_LEAD_LABEL" description="TPL_MOD_LEAD_DESC" filter="RAW" />
+
+			<field name="heading-text-align" type="list" default="left" label="TPL_TEXT_ALIGN_LABEL" description="TPL_TEXT_ALIGN_DESC">
+				<option value="left">Left</option>
+				<option value="center">Center</option>
+				<option value="center">Right</option>
+			</field>
+    </fieldset>
+  </fields>
+</form>

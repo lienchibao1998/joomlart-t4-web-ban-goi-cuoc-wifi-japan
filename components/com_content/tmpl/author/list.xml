@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Author listing" option="plg_system_t4">
+		<help
+			key = "list" />
+		<message>
+			<![CDATA[PLG_T4_AUTHORS_DESC]]>
+		</message>
+	</layout>
+	<fields name="request">
+		<fieldset name="request" addfieldpath="/administrator/components/com_users/models/fields">
+			<field name="gid" type="Usergrouplist" label="Groups" description="Groups desc" required="true" multiple="true" class="multipleAuthors" />
+
+		</fieldset>
+	</fields>
+	<!-- Add fields to the parameters object for the layout. -->
+	<fields name="params" addfieldpath="/modules/mod_jacontentlisting/admin/fields">
+
+		<fieldset name="author" label="JGLOBAL_LAYOUT_OPTIONS" addfieldpath="/administrator/components/com_modules/models/fields">
+			<field name="layout_type" type="hidden" default="list" value="list" />
+
+			<field name="num_authors" type="number" label="PLG_T4_NUM_AUTHORS" description="PLG_T4_NUM_AUTHORS_DESC" default="10" useglobal="true" size="3" />
+			<field name="num_author_col" type="list" label="PLG_T4_NUM_COLUMNS_LABEL" description="PLG_T4_NUM_COLUMNS_DESC" default="2">
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+        <option value="6">6</option>
+			</field>
+
+			<field name="authorlayout" type="spacer" label="PLG_T4_SUBSLIDER_AUTHOR_LAYOUT_LABEL" class="text" />
+			<field name="num_intro_articles" type="number" label="JGLOBAL_NUM_INTRO_ARTICLES_LABEL" description="JGLOBAL_NUM_INTRO_ARTICLES_DESC" hint="PLG_T4_NUM_INTRO_ARTICLES_PLACEHODER" size="3" />
+
+			<field name="num_article_col" type="list" label="JGLOBAL_NUM_COLUMNS_LABEL" default="2">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+        		<option value="6">6</option>
+			</field>
+			<field name="orderby_pri" type="list" label="JGLOBAL_CATEGORY_ORDER_LABEL" useglobal="true" validate="options">
+				<option value="none">JGLOBAL_NO_ORDER</option>
+				<option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+				<option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+				<option value="order">JGLOBAL_CATEGORY_MANAGER_ORDER</option>
+			</field>
+
+			<field name="orderby_sec" type="list" label="JGLOBAL_ARTICLE_ORDER_LABEL" useglobal="true" validate="options">
+				<option value="front">COM_CONTENT_FEATURED_ORDER</option>
+				<option value="rdate">JGLOBAL_MOST_RECENT_FIRST</option>
+				<option value="date">JGLOBAL_OLDEST_FIRST</option>
+				<option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+				<option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+				<option value="author">JGLOBAL_AUTHOR_ALPHABETICAL</option>
+				<option value="rauthor">JGLOBAL_AUTHOR_REVERSE_ALPHABETICAL</option>
+				<option value="hits" requires="hits">JGLOBAL_MOST_HITS</option>
+				<option value="rhits" requires="hits">JGLOBAL_LEAST_HITS</option>
+				<option value="random">JGLOBAL_RANDOM_ORDER</option>
+				<option value="order">JGLOBAL_ORDERING</option>
+				<option value="rorder">JGLOBAL_REVERSE_ORDERING</option>
+				<option value="vote" requires="vote">JGLOBAL_VOTES_DESC</option>
+				<option value="rvote" requires="vote">JGLOBAL_VOTES_ASC</option>
+				<option value="rank" requires="vote">JGLOBAL_RATINGS_DESC</option>
+				<option value="rrank" requires="vote">JGLOBAL_RATINGS_ASC</option>
+			</field>
+
+			<field name="order_date" type="list" label="JGLOBAL_ORDERING_DATE_LABEL" useglobal="true" validate="options">
+				<option value="created">JGLOBAL_CREATED</option>
+				<option value="modified">JGLOBAL_MODIFIED</option>
+				<option value="published">JPUBLISHED</option>
+				<option value="unpublished">JUNPUBLISHED</option>
+			</field>
+			<field name="show_category" type="list" label="JGLOBAL_SHOW_CATEGORY_LABEL" description="JGLOBAL_SHOW_CATEGORY_DESC" useglobal="true" class="chzn-color">
+				<option value="use_article">COM_CONTENT_FIELD_VALUE_USE_ARTICLE_SETTINGS</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_date" type="radio" label="JDATE" description="PLG_T4_AUTHOR_FIELD_SHOWDATE_DESC" default="1" filter="integer" class="btn-group btn-group-yesno">
+				<option value="1">JSHOW</option>
+				<option value="0">JHIDE</option>
+			</field>
+			<field name="show_date_field" type="list" label="PLG_T4_AUTHOR_FIELD_DATEFIELD_LABEL" description="PLG_T4_AUTHOR_FIELD_DATEFIELD_DESC" default="created" showon="show_date:1" validate="options">
+				<option value="created">PLG_T4_AUTHOR_OPTION_CREATED_VALUE</option>
+				<option value="modified">PLG_T4_AUTHOR_OPTION_MODIFIED_VALUE</option>
+				<option value="publish_up">PLG_T4_AUTHOR_OPTION_STARTPUBLISHING_VALUE</option>
+			</field>
+			<field name="show_date_format" type="text" label="JGLOBAL_DATE_FORMAT_LABEL" description="JGLOBAL_DATE_FORMAT_DESC" default="Y-m-d H:i:s" showon="show_date:1" />
+			<field name="show_hits" type="list" label="JGLOBAL_SHOW_HITS_LABEL" useglobal="true" class="chzn-color">
+				<option value="use_article">COM_CONTENT_FIELD_VALUE_USE_ARTICLE_SETTINGS</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_pagination" type="list" label="JGLOBAL_PAGINATION_LABEL" description="JGLOBAL_PAGINATION_DESC" useglobal="true" class="chzn-color">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+				<option value="3">TPL_T4_PAGINATION_LOADMORE</option>
+				<option value="4">TPL_T4_PAGINATION_INFINITIVE</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

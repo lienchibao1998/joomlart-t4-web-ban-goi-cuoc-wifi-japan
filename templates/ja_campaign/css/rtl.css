@@ -1,0 +1,25 @@
+/**
+ *------------------------------------------------------------------------------
+ * @package       T4_Blank - Free Template for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt
+ *------------------------------------------------------------------------------
+**/
+.fa, .fab, .fal, .far, .fas {
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1); }
+
+
+#editor .custom-edit-content .control-group .chzn-container .chzn-drop {
+  right: -9999px;
+  left: auto !important;
+}
+#editor .custom-edit-content .control-group .chzn-container .chzn-drop .chzn-search {
+  position: static;
+}
+#editor .custom-edit-content .control-group .chzn-container.chzn-with-drop .chzn-drop {
+  right: 0;
+}

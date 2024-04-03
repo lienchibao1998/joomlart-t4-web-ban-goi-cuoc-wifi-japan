@@ -1,0 +1,235 @@
+/* FORM ELEMENT
+----------------------------- */
+/* Input */
+input {
+  border: 1px solid var(--fe-border-color);
+  border-radius: var(--fe-border-radius);
+  font-family: inherit;
+  height: 46px;
+  font-size: 1rem;
+  padding: 0 1rem;
+  transition: var(--base-trans);
+  width: 100%;
+}
+
+input:focus {
+  box-shadow: none;
+  border: 1px solid var(--success);
+  outline: none;
+}
+
+
+/* Choices */
+.choices[data-type*="select-multiple"] .choices__inner,
+.choices[data-type*="select-one"] .choices__inner {
+  background: url(select-bg.svg) no-repeat 100%/116rem #eaedf0;
+  border-radius: var(--fe-border-radius);
+  border: 1px solid var(--fe-border-color);
+  cursor: pointer;
+  height: 46px;
+  padding: .5rem 1rem;
+  padding-inline-end: 3rem;
+}
+
+.choices[data-type*="select-multiple"] .choices__inner {
+  height: auto;
+}
+
+.choices[data-type*="select-one"] .choices__inner .choices__item,
+.choices[data-type*="select-multiple"] .choices__inner .choices__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  gap: 6px;
+}
+
+.choices[data-type*="select-one"] .choices__inner .choices__button_joomla,
+.choices[data-type*="select-multiple"] .choices__inner .choices__button_joomla {
+  background: var(--fe-gray-200);
+  color: var(--fe-gray-600);
+  border: 0;
+  border-radius: 50%;
+  height: 20px;
+  overflow: hidden;
+  text-indent: -9999rem;
+  position: relative;
+  transition: var(--base-trans);
+  width: 20px;
+}
+
+.choices[data-type*="select-one"] .choices__inner .choices__button_joomla:hover,
+.choices[data-type*="select-one"] .choices__inner .choices__button_joomla:focus,
+.choices[data-type*="select-multiple"] .choices__inner .choices__button_joomla:hover,
+.choices[data-type*="select-multiple"] .choices__inner .choices__button_joomla:focus {
+  background: var(--fe-danger);
+  color: #fff;
+  cursor: pointer;
+}
+
+.choices[data-type*="select-one"] .choices__inner .choices__button_joomla::before,
+.choices[data-type*="select-multiple"] .choices__inner .choices__button_joomla::before {
+  content: "×";
+  font-size: 16px;
+  position: absolute;
+  text-indent: 0;
+  left: 4px;
+  top: 0px;
+}
+
+.choices[data-type*="select-one"]::after {
+  display: none;
+}
+
+.choices__inner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.choices__input {
+  border: 1px solid #f9f9f9;
+  height: auto;
+  padding: 6px .5rem;
+  margin: 6px 0;
+}
+
+.choices__list--multiple {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+
+/* Custom select */
+.form-select,
+.custom-select {
+  background: url(select-bg.svg) no-repeat 100%/116rem #eaedf0;
+  border: 1px solid var(--fe-border-color);
+  border-radius: var(--fe-border-radius);
+  height: 42px;
+  padding: .5rem 3rem .5rem 1rem;
+  appearance: none;
+  width: 100%;
+}
+
+
+/* Calendar */
+.field-calendar .input-group {
+  display: flex;  
+}
+
+.field-calendar input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.field-calendar .btn {
+  background-color: var(--gray-500);
+  border-color: rgba(148, 100, 100, 0.05);
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: none;
+}
+
+.field-calendar .btn:hover,
+.field-calendar .btn:focus,
+.field-calendar .btn:active {
+  background-color: var(--gray-600);
+}
+
+.field-calendar .input-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.field-calendar .inputbox {
+  border-radius: 5px 0 0 5px;
+  float: left;
+}
+
+.field-calendar .input-group-append {
+  float: left;
+}
+
+.field-calendar .input-group-append .btn {
+  border-radius: 0 5px 5px 0;
+}
+
+.js-calendar .buttons-wrapper {
+  background-color: transparent;
+  border-radius: 0;
+  display: flex;  
+  padding: 12px 24px;
+  width: 100%;
+}
+
+.js-calendar .buttons-wrapper .btn {
+  background: var(--gray-500);
+  border-radius: 0;
+  color: var(--white);
+  flex: 1;
+  font-weight: 500;
+}
+
+.js-calendar .buttons-wrapper .btn:hover,
+.js-calendar .buttons-wrapper .btn:focus,
+.js-calendar .buttons-wrapper .btn:active {
+  background: var(--gray-600);
+}
+
+.js-calendar .buttons-wrapper .btn:first-child {
+  border-radius: 3px 0 0 3px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.js-calendar .buttons-wrapper .btn:last-child {
+  border-radius: 0 3px 3px 0;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.js-calendar.hidden{
+  display: none;
+}
+
+
+/* Media field */
+.field-media-wrapper .field-media-preview {
+  max-width: none;
+}
+
+.field-media-wrapper .input-group {
+  border-bottom-left-radius: var(--fe-border-radius);
+  border-bottom-right-radius: var(--fe-border-radius);
+  display: flex;
+  overflow: hidden;
+}
+
+.field-media-wrapper .input-group input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  flex: 1;
+  width: auto;
+}
+
+.field-media-wrapper .input-group .btn {
+  border-radius: 0;
+}
+
+/* Input group */
+.input-group {
+  display: flex;
+}
+
+.input-group input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  flex: 1;
+}
+
+.input-group .btn:not(:first-child) {
+  border-top-right-radius: var(--fe-border-radius);
+  border-bottom-right-radius: var(--fe-border-radius);
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_JACAMPAIGN</name>
+	<author>JoomlArt.com</author>
+	<creationDate>Mar 28th, 2024</creationDate>
+	<copyright>J.O.O.M Solutions Co., Ltd.</copyright>
+	<license>GNU/GPL V3	</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.0.1</version>
+	<description>PLG_SYSTEM_JACAMPAIGN_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="jacampaign">jacampaign.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>helpers</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_jacampaign.ini</language>
+		<language tag="en-GB">en-GB.plg_system_jacampaign.sys.ini</language>
+	</languages>
+	<updateservers>
+    	<server type="extension">http://update.joomlart.com/service/tracking/j31/plg_system_jacampaign.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset  name='activation' label="PLG_JACAMPAIGN_FIELD_ACITVATION_EMAIL">
+				<field 
+					name="email_resgitration_subject"
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_EMAIL_REGISTRATION_SUB" 
+					type="text" 
+					value="" />
+				<field 
+					name="email_resgitration_body"
+				 	label="PLG_SYSTEM_JACAMPAIGN_FIELD_EMAIL_REGISTRATION_BODY" 
+				 	type="textarea" 
+				 	value="" 
+				 	cols="80"
+					rows="20"
+					class="input-xxlarge"
+					filter="raw"/>
+				<field name="email_activation_subject"
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_EMAIL_ACTIVATION_SUB" 
+					type="text" 
+					value="" />
+				<field 
+					name="email_activation_body" 
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_EMAIL_ACTIVATION_BODY" 
+					type="textarea" 
+					value="" 
+				 	cols="80"
+					rows="20"
+					class="input-xxlarge"
+					filter="raw"/>
+			</fieldset>
+			<fieldset name="offer" label="PLG_SYSTEM_JACAMPAIGN_FIELD_SUBMIT_OFFER_SETTING">
+				
+				<field 
+					name="email_submitoffer_subject" 
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_EMAIL_SUBMIT_OFFER_SUB" 
+					type="text" 
+					value="" />
+				<field 
+					name="email_submitoffer_body" 
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_EMAIL_SUBMIT_OFFER_BODY" 
+					type="textarea" 
+					value="" 
+				 	cols="80"
+					rows="20"
+					class="input-xxlarge"
+					filter="raw"/>
+				<field 
+					name="email_to_admin_subject" 
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_EMAIL_SUBMIT_OFFER_TO_ADMIN_SUB" 
+					type="text" 
+					value="" />
+				<field 
+					name="email_to_admin_body" 
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_EMAIL_SUBMIT_OFFER_TO_ADMIN_BODY" 
+					type="textarea" 
+					value="" 
+				 	cols="80"
+					rows="20"
+					class="input-xxlarge"
+					filter="raw" />
+			</fieldset>
+			<fieldset name="advanced" label="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_SETTING" description="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_SETTING_DESC">
+				<field name="modal_popup" type="radio" default="0" label="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_SETTING_SHOW" description="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_SETTING_SHOW_DESC" class="btn-group btn-group-yesno">
+				  	<option value="1">JYES</option>
+				  	<option value="0">JNO</option>
+				</field>
+				<field 
+					name="modal_title"
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_TITLE" 
+					description="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_TITLE_DESC" 
+					type="text" 
+					showon="modal_popup:1"
+					value="" />
+				<field 
+					name="modal_description"
+				 	label="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_BODY"
+				 	description="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_BODY_DESC"
+				 	type="textarea" 
+				 	value="" 
+				 	cols="80"
+					rows="20"
+					showon="modal_popup:1"
+					class="input-xxlarge"
+					filter="raw"/>
+				<field 
+					name="modal_duration"
+					type="text"
+					label="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_DURATION"
+					description="PLG_SYSTEM_JACAMPAIGN_FIELD_MODAL_DURATION_DESC"
+					value=""
+					showon="modal_popup:1"
+					hint="15"
+					/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

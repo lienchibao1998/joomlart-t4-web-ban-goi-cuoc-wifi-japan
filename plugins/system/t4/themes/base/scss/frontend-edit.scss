@@ -1,0 +1,795 @@
+// FRONT-END EDIT
+// -----------------------------------
+
+// Bootstrap functions
+@import "../vendors/bootstrap5/scss/_functions";
+
+// Bootstrap variables
+@import "../vendors/bootstrap5/scss/variables";
+
+// Bootstrap mixins
+@import "../vendors/bootstrap5/scss/mixins";
+
+html {
+  height: 100%;
+}
+
+// 
+// Front-end edit layout
+// ---------------------
+.t4-edit-layout {
+  position: relative;
+  padding-bottom: 100px;
+
+  // Container
+  .container {
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  // html elements
+  .btn,
+  .btn-toolbar .btn {
+    background-color: $gray-300;
+    border: 0;
+    color: $gray-700;
+    line-height: 1;
+    font-weight: 600;
+    padding: .875rem 1rem;
+
+    &.btn-primary {
+      background-color: $primary;
+      color: $white;
+    }
+
+    [class^="icon-"], [class*=" icon-"] {
+      margin-right: 6px;
+      opacity: .6;
+    }
+
+    &.btn-danger {
+      background: $danger;
+      color: $white;
+
+      &:hover, &:focus, &:active {
+        background: darken($danger, 10%);
+      }
+    }
+  }
+
+  .btn-clone,
+  .btn-delete {
+    [class^="icon-"], [class*=" icon-"] {
+      margin-right: 0;
+    }
+  }
+
+  .btn-group.radio {
+    .btn {
+      border-radius: 0;
+
+      &:first-of-type {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &:last-of-type {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+
+  // Calendar field
+  .field-calendar {
+    .input-group {
+      display: flex;
+      align-items: stretch;
+    }
+    
+    .form-control {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      // Mobile view
+      @media (max-width: 480px) {
+        max-width: 200px;
+      }
+    }
+
+    .btn {
+      margin: 0;
+    }
+
+    .buttons-wrapper {
+      .btn {
+        color: $gray-700;
+        font-weight: 600;
+
+        &:hover, &:focus, &:active {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  // Media field
+  joomla-field-media {    
+    display: block;
+    max-width: 100%;
+
+    div.input-group {
+      border-bottom-right-radius: .25rem;
+      display: flex;
+      overflow: hidden;
+
+      .btn {
+        border-radius: 0;
+      }
+    }
+
+    .field-media-input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      height: 42px;
+      flex: 1;
+      line-height: 42px;
+    }
+
+    .btn {
+      border-radius: 0;
+      margin: 0;
+      padding: 0 16px;
+
+      span.icon-times {
+        margin-right: 0;
+      }
+    }
+
+    .button-clear {
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  // JA Content Type
+  #attrib-content_meta {
+    .input-append {
+      display: flex;
+      align-items: center;
+
+      // Preview
+      .media-preview {
+        white-space: nowrap;
+        min-height: 38px;
+        line-height: 38px;
+      }
+
+      input {
+        max-width: 140px;
+      }
+
+      .btn {
+        border: 0;
+
+        [class^="icon-"] {
+          margin-right: 0;
+          margin-top: -3px;
+        }
+
+        &:hover,&:focus,&:active {
+          border: 0;
+        }
+      }
+    }
+
+    .jaacm-list a.modal {
+      position: relative;
+    }
+  }
+
+  // Input
+  input {
+    max-width: 100%;
+  }
+
+  // Select field
+  joomla-field-fancy-select {
+    display: block;
+    max-width: 300px;
+
+    .choices__inner {
+      border: 1px soild $border-color;
+      border-radius: 5px;
+      padding: .5rem;
+      min-width: 300px;
+
+      .choices__button_joomla {
+        background-color: $white;
+        border-radius: 5px;
+        border: 1px solid $border-color;
+        margin-left: 6px;
+        padding: 4px 6px;
+
+        &:hover, &:focus {
+          border: 1px solid darken($border-color, 10%);
+          cursor: pointer;
+        }
+      }
+
+      .choices__input--cloned {
+        display: none!important;
+      }
+    }
+  }
+
+  select.form-select,
+  select.custom-select {
+    background: url(select-bg.svg) no-repeat 100%/116rem $gray-200;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    display: block;
+    font-size: 15px;
+    padding: .6rem 3rem .6rem 1rem;
+    min-width: 295px;
+    max-width: 100%;
+    cursor: pointer;
+    appearance: none;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    // Mobile view
+    @media (max-width: 480px) {
+      min-width: 250px;
+    }
+  }
+
+  .custom-select optgroup,
+  .custom-select option,
+  .form-select optgroup,
+  .form-select option {
+    background-color: $white;
+    // color: $gray-500;
+  }
+
+  .choices[data-type*="select-one"] .choices__inner .choices__item,
+  .choices[data-type*="select-multiple"] .choices__inner .choices__item {
+    white-space: nowrap;
+  }
+
+  // Accordion collapse
+  #options {
+  }
+
+  .accordion-item {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+  }
+
+  .accordion-item:first-of-type {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+  }
+
+  .accordion-item:not(:first-of-type) {
+    border-top: 0;
+  }
+
+  .accordion-header {
+    border-radius: .25rem;
+    margin: 0;
+  }
+
+  .accordion-button {
+    background-color: $white;
+    border: 0;
+    border-radius: .25rem;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    color: #22262a;
+    cursor: pointer;
+    text-align: left;
+    overflow-anchor: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
+    width: 100%;
+
+    &::after {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2322262a'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 1.25rem;
+      content: "";
+      flex-shrink: 0;
+      height: 1.25rem;
+      margin-left: auto;
+      width: 1.25rem;
+    }
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230f244d'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z'/%3E%3C/svg%3E");
+    transform: rotate(-180deg);
+  }
+
+  .accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+  }
+
+  .accordion-item:last-of-type {
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;    
+
+    .accordion-collapse {
+      border-bottom-right-radius: .25rem;
+      border-bottom-left-radius: .25rem;
+    }
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: #e7eaee;
+  }
+
+  .accordion-body {
+    padding: 1rem 1.25rem;
+  }
+
+  // Style from bootstrap 5
+  .mb-3 {
+    margin-bottom: 15px;
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  // Alert On Edit Profile
+  &.view-profile {
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+}
+
+// Tooltip
+.tip-wrap {
+  background-color: $white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  padding: 0;
+
+  .tip-title {
+    padding: calc($spacer / 4) calc($spacer / 2);
+  }
+
+  .tip-text {
+    padding: calc($spacer / 2);
+  }
+}
+
+.nav-tabs a.nav-link {
+  display: block !important;
+}
+
+
+// Override default button
+.btn-toolbar {
+  .btn {
+    background-color: $secondary;
+    color: $white;
+    
+    &:hover, &:focus, &:active {
+      background-color: darken($secondary, 5%);
+      color: $white;
+    }
+  }
+}
+
+.label {
+  &.label-default {
+    background-color: $gray-200;
+    color: $gray-700;
+    border-radius: 3px;
+    padding: 2px 8px;
+  }
+}
+
+// Badge
+.badge {
+  border-radius: 4px;
+  font-size: $font-size-sm;
+  line-height: 1;
+  padding: 4px 8px;
+
+  &.bg-secondary {
+    background-color: $secondary;
+    color: $white;
+  }
+}
+
+// PAGE STYLE
+// -----------------------------------
+.t4-header {
+  background-color: $gray-100;
+  border-bottom: 1px solid $border-color;
+}
+
+
+// EDIT ARTICLE
+// -----------------------------------
+// Radio button group
+.radio.btn-group {
+  input[type="radio"] {
+    display: none;
+  }
+
+  > label {
+    background-color: $gray-200;
+    border: 1px solid rgba(0,0,0,0.1);
+    display: inline-block;
+    padding: calc($spacer / 2) $spacer;
+    text-shadow: none;
+    user-select: none;
+
+    &:first-of-type {
+      border-right: 0;
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      border-left: 0;
+    }
+  }
+}
+
+// Fix conflict style
+.collapse:not(.show) {
+  height: 0;
+  overflow: hidden;
+}
+
+.t4-megamenu.collapse:not(.show) {
+  overflow: visible;
+}
+
+// Dropdown
+.chzn-container {
+  min-width: 220px;
+}
+
+// Calendar
+.field-calendar {
+  .btn.btn-secondary {
+    background-color: $gray-500;
+    border-color: rgba(0,0,0,0.1);
+  }
+}
+
+
+// 
+// Override edit article view (nav tabs, editor, button,...)
+// ---------------------------------------------------------
+.edit.item-page {
+  // Nav tabs
+  .nav-tabs {
+    li {
+      margin-bottom: 0;
+      padding-left: $spacer;
+      padding-right: $spacer;
+
+      a {
+        border: 0;
+        border-radius: 0;
+        color: $gray-700;
+        padding-left: 0;
+        padding-right: 0;
+
+        &.active {
+          background-color: transparent;
+          border-bottom-color: $blue;
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  fieldset {
+    background-color: darken($gray-100, 3%);
+    padding: $spacer*2;
+    margin-bottom: 20px;
+
+    @media (max-width: 767px) {
+      padding: $spacer;
+    }
+  }
+
+  #editor {
+    margin-bottom: 0;
+
+    .control-group {
+      .controls {
+        margin-left: 0;
+      }
+
+      #jform_title {
+        border-radius: 0;
+        width: 100%;
+      }
+    }
+
+    // Editor none
+    .js-editor-none {
+      textarea {
+        border: 1px solid $gray-200;
+        padding: 10px;
+      }
+    }
+
+    .CodeMirror {
+      text-align: left;
+    }
+
+    // Button toolbar
+    .btn-toolbar {
+      padding: .75rem 1rem;
+    }
+  }
+
+  // Toolbar button
+  .btn-toolbar {
+    .btn {
+      border-radius: 4px;
+    }
+  }
+
+  .editor-xtd-buttons {
+    .btn,
+    .btn.btn-secondary {
+      background: $gray-300;
+      color: $gray-900;
+      margin-bottom: 4px;
+      padding: 12px 16px;
+
+      &:hover, &:focus, &:active {
+        background-color: $gray-400;
+      }
+    }
+  }
+}
+
+.edit {
+  .btn {
+    margin: 4px 0;
+  }
+
+  .btn-primary {
+    span::before {
+      color: $white;
+    }
+  }
+
+  .btn.btn-secondary {
+    background: $gray-300;
+    color: $gray-900;
+    // padding: 12px 16px;
+    
+
+    &:hover, &:focus, &:active {
+      background-color: $gray-400;
+    }
+  }
+}
+
+
+// Compatible with Boostrap 3
+.well {
+  background-color: $gray-200;
+  border: 1px solid $border-color;
+  padding: $spacer;
+  border-radius: 5px;
+}
+
+
+// USER PROFILE
+// -----------------------------------
+#member-profile {
+  text-align: left;
+}
+
+// Edit profile
+// ------------
+.users-profile-core {
+}
+
+fieldset {
+  legend {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+#jform_privacyconsent_privacy-lbl .modal {
+  display: inline;
+  position: static;
+}
+
+
+// EDIT MODULE
+// -----------------------------------
+#modules-form {
+  text-align: left;
+
+  .btn-toolbar {
+    margin-bottom: $spacer*2;
+  }
+
+  // Options
+  #options {
+    .accordion {
+      padding: 0;
+      margin-bottom: $spacer;
+    }
+
+    .card-header {
+      margin-bottom: -1px;
+      padding: 0;
+
+      h2 {
+        margin: 0;
+        line-height: 1;
+
+        .btn {
+          border: 0;
+          border-radius: 0;
+          color: $gray-700;
+          display: block;
+          padding: $spacer;
+          text-align: left;
+          width: 100%;
+
+          &:hover, &:focus, &:active {
+            color: $blue;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Windows popup
+// -------------------------------------
+#sbox-window {
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: 60% !important;
+  padding: 20px;
+  
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+// Modal
+// -------------------------------------
+.jviewport-width80 {
+  max-width: 80vw;
+}
+
+.jviewport-height70 {
+  height: 70vh;
+}
+
+.jviewport-height60 {
+  height: 60vh;
+}
+
+.modal-dialog {
+  iframe {
+    width: 100%;
+  }
+}
+
+.t4-edit-layout .modal-footer {
+  .btn {
+    border-radius: 5px;
+    padding: 12px 16px;
+
+    &.btn-success {
+      background-color: #457d54;
+      color: $white;
+    }
+  }
+}
+
+.modal-header button.btn-close {
+  cursor: pointer;
+}
+
+
+// Icon compatible
+// ---------------------------------
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  
+  &::before {
+    font-family: Fontawesome;
+  }
+}
+
+.icon-ok::before      { content: "\f00c"; }
+.icon-cancel::before  { content: "\f00d"; }
+.icon-apply::before   { content: "\f00c"; }
+.icon-save::before    { content: "\f0c7"; }
+.icon-times::before   { content: "\f00d"; }
+.icon-calendar::before    { content: "\f073"; }
+
+.radio-custom {
+  display: flex;
+  align-items: center;
+
+  label.form-check {
+    padding-left: 0;
+
+    &:first-of-type {
+      margin-right: 16px;
+    }
+  }
+
+  input {
+    height: auto;
+    width: auto;
+  }
+}
+
+// Com_config
+.view-config {
+  form > fieldset {
+    margin-top: 30px;
+
+    legend {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    label {
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.com-users-profile__multifactor {
+  .btn:hover,
+  .btn:focus,
+  .btn:active {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+// Submit button
+.com-users-profile__edit-submit {
+  .btn {
+    font-weight: 700;
+    padding: .875rem 1rem;
+    height: auto;
+  }
+}
+
+.jmodedit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 300;
+}

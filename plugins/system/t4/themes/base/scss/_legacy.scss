@@ -1,0 +1,935 @@
+:root {
+  --global-spacing: 8px;
+  --spacing-xs: calc(var(--global-spacing) / 2);
+  --spacing-sm: var(--global-spacing);
+  --spacing-md: calc(var(--global-spacing) * 1.5);
+  --spacing-lg: calc(var(--global-spacing) * 2);
+  --spacing-xl: calc(var(--global-spacing) * 3);
+
+  --border-radius-sm: 3px;
+  --border-radius-md: 5px;
+  --border-radius-lg: 7px;
+}
+
+// Bootstrap functions
+@import "../vendors/bootstrap5/scss/_functions";
+
+// Bootstrap variables
+@import "../vendors/bootstrap5/scss/variables";
+
+// Bootstrap mixins
+@import "../vendors/bootstrap5/scss/mixins";
+
+
+// Message
+// ----------------------------------
+
+.btn-close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  color: #000;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  border: 0;
+  border-radius: 0.25rem;
+  opacity: 0.5;
+
+  &:hover {
+    color: #000;
+    text-decoration: none;
+    opacity: 0.75;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    opacity: 1;
+  }
+}
+
+.alert {
+  .close {
+    @extend .btn-close;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    overflow: hidden;
+    text-indent: -999rem;
+  }
+}
+
+
+// FORM ELEMENTS
+// -----------------------------------------
+form.form-horizontal {
+  .control-group {
+
+    .control-label {
+      display: block;
+      float: left;
+      padding-right: 5px;
+      text-align: left;
+
+      label {
+        text-align: left;
+      }
+    }
+
+    .controls {
+      margin-left: 180px;
+    }
+  }
+}
+
+// Select box
+select {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  padding: 8px 6px;
+}
+
+// Password Toggle
+.input-password-toggle {
+  .icon-fw {
+    margin-right: 0;
+  }
+  
+  .icon-eye-slash:before {
+    content: "\F070";
+    font-family: FontAwesome;
+  }
+}
+
+
+// Improve style for media upload
+// ----------------------------------
+.contentpane.com_media {
+  padding-top: 0;
+
+  .subhead {
+    background: #fff;
+    border-bottom: 1px solid $border-color;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0.875rem 1rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+
+    #toolbar {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .btn {
+      background: $white;
+      border: 1px solid #C2CBD6;
+      color: #495057;
+      display: flex;
+      align-items: center;
+      padding: .5rem 1rem;
+
+      span {
+        font-weight: 400;
+      }
+
+      &.btn-success {        
+        &:hover, &:focus, &:active {
+          background-color: #457d54;
+          border-color: #457d54;
+          color: $white;
+
+          span {
+            color: $white;
+          }
+        }
+
+        span {
+          color: #457d54;
+        }
+      }
+
+      &.btn-info {
+        &:hover, &:focus, &:active {
+          background-color: #1f3047;
+          border-color: #1f3047;
+          color: $white;
+
+          span {
+            color: $white;
+          }
+        }
+
+        span {
+          color: #1f3047;
+        }
+      }
+
+      &.btn-danger {
+        &:hover, &:focus, &:active {
+          background-color: #c52827;
+          border-color: #c52827;
+          color: $white;
+
+          span {
+            color: $white;
+          }
+        }
+
+        span {
+          color: #c52827;
+        }
+      }
+
+    }
+
+    .icon-times::before { font-family: FontAwesome; content: "\f00d"; }
+  }
+
+  .hidden { display: none; }
+
+  .media-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    align-items: stretch;
+
+    .media-sidebar {
+      border-right: 1px solid $border-color;
+    }
+
+    .media-main {
+      .media-toolbar {
+        border-bottom: 1px solid $border-color;
+        top: 71px;
+
+        .media-breadcrumb {
+          border-left: 1px solid $border-color;
+        }
+
+        // Breadcrumb
+        .media-breadcrumb-item {
+          background-color: #F4F7FA;
+
+          &::before {
+            border-inline-start-color: $white;
+          }
+
+          &::after {
+            border-inline-start-color: #F4F7FA;
+          }
+
+          &:last-of-type {
+            background-color: $white;
+
+            &::after { display: none; }
+          }
+        }
+
+        .media-view-icons {
+          button {
+            border-left: 1px solid $border-color;
+
+            span {
+              font-weight: 600;
+            }
+          }
+        }
+
+        .icon-search-plus::before { font-family: FontAwesome; content: "\f00e"; }
+        .icon-search-minus::before { font-family: FontAwesome; content: "\f010"; }
+      }
+
+      .media-browser {
+        .media-browser-actions-list {
+          background: #f4f7fa;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+.contentpane div.container-popup {
+  padding: 0 !important;
+
+  // Button
+  // ------
+  .btn,
+  #upbutton {
+    background-color: darken($gray-200, 10%);
+    border: 0;
+    border-radius: 3px;
+    color: $gray-800;
+    font-weight: 400;
+    margin: 0;
+    padding: 8px 16px;
+    letter-spacing: 0;
+    text-transform: none;
+
+    &:hover, &:focus, &:active {
+      background-color: darken($gray-200, 20%);
+    }
+
+    .caret {
+      border-top: 4px solid $gray-700;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      height: 0;
+      display: inline-block;
+      margin-left: 4px;
+      vertical-align: middle;
+      width: 0;
+    }
+  }
+
+  // Button size
+  .btn-small {
+    padding: 2px 8px;
+  }
+
+  .btn-micro {
+    background: transparent;
+    padding: 4px;
+  }
+
+  .btn-success {
+    background-color: $success;
+    color: $white;
+
+    &:hover, &:focus, &:active {
+      //background-color: darken($success, 10%);
+    }
+  }
+
+  .btn-warning {
+    background-color: $warning;
+    color: $white;
+
+    &:hover, &:focus, &:active {
+      //background-color: darken($warning, 10%);
+    }
+  }
+
+  .btn-primary {
+    background-color: $primary;
+    color: $white;
+
+    &:hover, &:focus, &:active {
+      //background-color: darken($primary, 10%);
+    }
+
+    .caret {
+      border-top: 0;
+    }
+  }
+
+  // Input box
+  input[type="text"] {
+    border: 1px solid $gray-400;
+    border-radius: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  // Input append
+  .input-append {
+    input[type="text"] {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .btn {
+      border: 1px solid $gray-400;
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+
+  // Grid
+  // ----
+  .row-fluid { @include make-row(); }
+
+  .span2  { @include make-col(2); }
+  .span3  { @include make-col(3); }
+  .span4  { @include make-col(4); }
+  .span5  { @include make-col(5); }
+  .span6  { @include make-col(6); }
+  .span7  { @include make-col(7); }
+  .span8  { @include make-col(8); }
+  .span9  { @include make-col(9); }
+  .span10 { @include make-col(10); }
+  .span11 { @include make-col(11); }
+  .span12 { @include make-col(12); }
+
+  .row-fluid [class*="span"] {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .well {
+    background-color: darken($gray-100, 1%);
+    border: 0;
+    border-radius: var(--border-radius-md);
+    margin-bottom: $spacer;
+    padding: 15px;
+
+    .row-fluid {
+      margin-bottom: 0;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+
+      .control-label {
+        float: none;
+        padding: 0;
+
+        label {
+          min-width: 0;
+        }
+      }
+
+      .controls {
+        margin-left: 0;
+      }
+    }
+  }
+
+  // 2 columns
+  .span6 {
+    &.control-group {
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+
+      .pull-right {
+        align-items: center;
+      }
+
+      .control-label {
+        flex-basis: 100%;
+      }
+
+      .controls {
+        flex-basis: 100%;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .js-stools-container-bar {
+    margin-bottom: 1rem;
+  }
+
+  .hidden-tablet {
+    @media (min-width: 768px) and (max-width: 1200px) {
+      display: none !important;
+    }
+  }
+
+  // Table
+  table {
+    th {
+      border-bottom: 1px solid $gray-300 !important;
+      font-weight: 500;
+      padding: 8px;
+    }
+
+    td {
+      padding: 8px;
+
+      .btn [class^="icon-"],
+      .btn [class*=" icon-"] {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  // Pagination
+  ul.pagination {
+    border: 1px solid $gray-300;
+    border-radius: 3px;
+    margin-bottom: 0 !important;
+
+    > li.page-item {
+      border-left: 1px solid $gray-300;
+      margin: 0;
+
+      &:first-child {
+        border-left: 0;
+
+        .page-link {
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+        }
+      }
+
+      &:last-child {
+        .page-link {
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+      }
+
+      .page-link {
+        border: 0;
+        border-radius: 0 !important;
+        box-shadow: none;
+        font-weight: 500;
+        margin-left: 0;
+        padding: 8px 12px;
+        height: auto;
+        line-height: normal;
+        width: auto;
+      }
+    }
+
+    > li.disabled {
+      opacity: .5;
+    }
+  }
+
+  // ICONS
+  // ---------------------------------
+  [class^="icon-"], [class*=" icon-"] {
+    &::before {
+      font-family: Fontawesome;
+    }
+  }
+
+  .icon-upload::before      { content: "\f093"; }
+  .icon-search::before      { content: "\f002"; }
+  .icon-publish::before     { content: "\f00c"; color: $success; }
+  .icon-featured::before    { content: "\f005"; color: $orange; }
+  .icon-unfeatured::before  { content: "\f006"; }
+  .icon-folder-2::before    { content: "\f07b"; }
+  .icon-lock::before        { content: "\f023"; }
+  .icon-zoom-in::before     { content: "\f00e"; }
+  .icon-delete::before      { content: "\f00d"; }
+}
+
+
+// Image form
+// -------------------------------------
+#imageForm {
+  .control-group {
+    .pull-right {
+      margin-left: auto;
+    }
+  }
+}
+
+.input-append {
+  position: relative;
+  @include clearfix();
+
+  .media-preview {
+    background-color: $gray-200;
+    border: 1px solid $border-color;
+    border-radius: 3px 0 0 3px;
+    height: 36px;
+    float: left;
+    line-height: 36px;
+    text-align: center;
+    width: 36px;
+  }
+
+  input[type="text"] {
+    border: 0;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    width: auto !important;
+  }
+
+  .btn {
+    background-color: $gray-200;
+    border: 1px solid $border-color;
+    border-left: 0;
+    border-radius: 0 3px 3px 0;
+    display: block !important;
+    float: left;
+    height: 36px;
+    line-height: 25px;
+    text-align: center;
+
+    &.modal {
+      background-color: inherit;
+      bottom: auto;
+      border-left: 1px solid $border-color;
+      border-radius: 0;
+      position: relative;
+      left: auto;
+      top: auto;
+      margin: 0;
+      line-height: 23px;
+      width: auto;
+      z-index: 5;
+    }
+
+    &:hover, &:focus, &:active {
+      background-color: $red;
+      color: $white;
+
+      &.modal {
+        background-color: $primary;
+      }
+    }
+
+    span {
+      margin: 0;
+    }
+  }
+}
+
+// Upload form
+#uploadform.well {
+  padding: $spacer;
+
+  .control-group .controls {
+    margin-left: 160px;
+  }
+
+  #upload-file {
+    margin-bottom: $spacer;
+  }
+
+  #upload-submit {
+    margin-bottom: $spacer;
+  }
+}
+
+
+// Modal link
+// ----------------------------------
+a.modal {
+  color: $body-color;
+  position: relative;
+  display: inline-block;
+  height: auto;
+  vertical-align: middle;
+  width: auto;
+
+  &:hover, &:focus, &:active {
+    color: $link-hover-color;
+  }
+}
+
+span.star {
+  color: $red;
+  display: inline-block;
+}
+
+
+// Fix modal style
+// ----------------------------------
+.joomla-modal {
+  .modal-dialog {
+    margin: 0;
+    height: 100%;
+    max-width: 100%;
+    z-index: 3000;
+    width: 100%;
+
+    .modal-content {
+      border: 0;
+      border-radius: 0;
+      height: 100%;
+      width: 100%;
+      overflow: scroll;
+      height: 100%;
+    }
+  }
+}
+
+
+// Modal
+.contentpane {
+  background-color: #fff;
+  padding: 0;
+
+  .item-page {
+    padding: $spacer*1.5;
+  }
+
+  .page-header {
+    padding-right: $spacer*6;
+
+    h2 {
+      font-size: $h4-font-size;
+    }
+  }
+
+  // JS Tools
+  .js-stools {
+    .btn-toolbar,
+    .js-stools-container-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  
+    .ordering-select {
+      display: flex;
+      align-items: center;
+    }
+  
+    .btn-group {
+      margin-right: calc($spacer / 2);
+
+      .js-stools-btn-clear {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  
+    .js-stools-container-filters {
+      display: none;
+      margin-top: $spacer;
+  
+      &.js-stools-container-filters-visible {
+        display: flex;
+      }
+  
+      .js-stools-field-filter {
+        margin-right: calc($spacer / 2);
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+  
+      .choices {
+        .choices__inner {
+          border: 0;
+          min-height: auto;
+          padding: 0;
+  
+          input {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container-popup {
+  padding: 0;
+
+  .hr-condensed {
+    border: 0;
+    margin: 10px 0;
+  }
+
+  .btn-group {
+    .btn {
+      background-color: $gray-200;
+      border-radius: 3px;
+      margin: 0 5px;
+
+      &:hover, &:focus, &:active {
+        background-color: $gray-400;
+      }
+    }
+  }
+
+  .btn-toolbar {
+    joomla-toolbar-button {
+      margin: 0 4px;
+    }
+  }
+}
+
+.sbox-content-iframe#sbox-content iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.thumbnails.thumbnails-media {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+
+  .thumbnail {
+    min-height: 70px;
+    height: auto;
+
+    > a {
+      display: block;
+      padding: 20px 10px 30px;
+      height: 100%;
+      position: relative;
+
+      .small {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 4px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Fix: tab hidden when click to the tab
+.nav.nav-tabs {
+  li {
+    a {
+      display: block !important;
+    }
+  }
+}
+
+.hasPopover,
+.hasTooltip {
+  display: inline-block !important;
+}
+
+
+// Init choosen dropdown
+// ----------------------------------
+.chzn-container {
+  min-width: 220px;
+}
+
+.input-append {
+  vertical-align: middle;
+}
+
+.input-prepend.input-append {
+  .media-preview.add-on {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 6px;
+  }
+
+  .field-media-input {
+    max-width: 100px;
+  }
+}
+
+.control-group .controls select.inputbox {
+  width: auto;
+}
+
+.js-stools-field-filter {
+  select {
+    min-width: 250px !important;
+  }
+}
+
+// Fixed: The hidden captcha overlap the back-to-top button
+.grecaptcha-badge {
+  bottom: 70px !important;
+}
+
+// T4 Brands
+.t4-logo, .t4-logo-small {
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.t4-logo {
+  width: 182px;
+  height: 50px;
+  display: inline-block;
+}
+
+.t4-logo-small {
+  width: 60px;
+  height: 30px;
+}
+
+.t4-logo, .t4-logo-color {
+  background-image: url("//static.joomlart.com/images/ja-template/t4-framework/logo/t4-blue-logo-full.png");
+}
+
+.t4-logo-small, 
+.t4-logo-small.t4-logo-color {
+  background-image: url("//static.joomlart.com/images/ja-template/t4-framework/logo/t4-blue-short-logo.png");
+}
+
+.t4-logo-light {
+  background-image: url("//static.joomlart.com/images/ja-template/t4-framework/logo/t4-white-logo-full.png");
+}
+
+.t4-logo-small.t4-logo-light {
+  background-image: url("//static.joomlart.com/images/ja-template/t4-framework/logo/t4-white-short-logo.png");
+}
+
+.t4-logo-dark {
+  background-image: url("//static.joomlart.com/images/ja-template/t4-framework/logo/t4-dark-logo-full.png");
+}
+
+.t4-logo-small.t4-logo-dark {
+  background-image: url("//static.joomlart.com/images/ja-template/t4-framework/logo/t4-dark-short-logo.png");
+}
+
+
+// BOOTSTRAP 5 COMPATIBLE
+// Apply for all templates are using BS4
+// -------------------------------------
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+[role=tooltip]:not(.show) {
+  right: 5em;
+  z-index: 1070;
+  display: none;
+  max-width: none;
+  padding: .5em;
+  margin: .5em;
+  color: #000;
+  text-align: start;
+  background: #fff;
+  border: 1px solid #6d757e;
+  border-radius: .25rem;
+}
+
+.container-popup [id="filter[search]-desc"] {
+  top: 100%;
+  bottom: auto;
+}
+
+.icon-check {
+  color: $green;
+  font-family: FontAwesome;
+
+  &::before {
+    content: "\f00c";
+    display: inline-block;
+    font-size: 16px;
+  }
+}

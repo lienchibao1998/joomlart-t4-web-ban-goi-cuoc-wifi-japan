@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>MOD_JM_SOCIAL_ICONS</name>
+	<creationDate>23/01/2023</creationDate>
+	<author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2021 DJ-Extensions.com</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>https://dj-extensions.com</authorUrl>
+	<version>1.06</version>
+	<description>MOD_JM_SOCIAL_ICONS_DESC</description>
+	<files>
+		<filename module="mod_jm_social_icons">mod_jm_social_icons.php</filename>
+		<filename>index.html</filename>
+		<filename>license.txt</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<folder>fields</folder>
+	</files>
+
+		<updateservers>
+			<server type="extension" priority="1" name="MOD_JM_SOCIAL_ICONS">https://dj-extensions.com/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=34</server>
+		</updateservers>
+
+		<config>
+			<fields name="params" addfieldpath="/modules/mod_jm_social_icons/fields">
+
+			<fieldset name="basic">
+
+				<field name="items" type="jmelements" label="MOD_JM_SOCIAL_ICONS_FIELD_ITEMS" description="MOD_JM_SOCIAL_ICONS_FIELD_ITEMS_DESC" element_name="MOD_JM_SOCIAL_ICONS_FIELD_ITEM" element_empty_required_message="MOD_JM_SOCIAL_ICONS_FIELD_EMPTY_REQUIRED_FIELD" element_fields="name,image_file,icon,color,color2,url" element_field="name" filter="raw" />
+
+					<field name="name" type="text" default="" label="MOD_JM_SOCIAL_ICONS_FIELD_NAME" description="MOD_JM_SOCIAL_ICONS_FIELD_NAME_DESC" />
+
+					<field name="image_file" type="media" directory="" label="MOD_JM_SOCIAL_ICONS_FIELD_IMAGE" />
+
+					<field name="icon" type="text" default="" label="MOD_JM_SOCIAL_ICONS_FIELD_ICON" description="MOD_JM_SOCIAL_ICONS_FIELD_ICON_DESC" />
+
+					<field name="color" type="color" default="" label="MOD_JM_SOCIAL_ICONS_FIELD_COLOR" description="MOD_JM_SOCIAL_ICONS_FIELD_COLOR_DESC" />
+					<field name="color2" type="color" default="" label="MOD_JM_SOCIAL_ICONS_FIELD_COLOR2" description="MOD_JM_SOCIAL_ICONS_FIELD_COLOR2_DESC" />
+
+					<field name="url" type="url" default="" label="MOD_JM_SOCIAL_ICONS_FIELD_URL" description="MOD_JM_SOCIAL_ICONS_FIELD_URL_DESC" />
+
+					<field type="spacer" />
+
+					<field name="intro" type="textarea" default="" label="MOD_JM_SOCIAL_ICONS_FIELD_INTRO" description="MOD_JM_SOCIAL_ICONS_FIELD_INTRO_DESC" rows="5" cols="5" filter="raw" />
+
+					<field name="target" type="list" default="1" label="MOD_JM_SOCIAL_ICONS_FIELD_TARGET" description="MOD_JM_SOCIAL_ICONS_FIELD_TARGET_DESC">
+						<option value="1">MOD_JM_SOCIAL_ICONS_FIELD_TARGET_BLANK</option>
+						<option value="2">MOD_JM_SOCIAL_ICONS_FIELD_TARGET_SELF</option>
+					</field>
+
+					<field name="view" type="list" default="1" label="MOD_JM_SOCIAL_ICONS_FIELD_VIEW" description="MOD_JM_SOCIAL_ICONS_FIELD_VIEW_DESC">
+						<option value="1">MOD_JM_SOCIAL_ICONS_FIELD_VIEW_ICON</option>
+						<option value="2">MOD_JM_SOCIAL_ICONS_FIELD_VIEW_ICON_NAME</option>
+						<option value="3">MOD_JM_SOCIAL_ICONS_FIELD_VIEW_NAME</option>
+					</field>
+
+					<field name="theme" type="list" default="1" label="MOD_JM_SOCIAL_ICONS_FIELD_THEME" description="MOD_JM_SOCIAL_ICONS_FIELD_THEME_DESC">
+						<option value="1">MOD_JM_SOCIAL_ICONS_FIELD_THEME_DEFAULT</option>
+						<option value="2">MOD_JM_SOCIAL_ICONS_FIELD_THEME_OVERRIDE</option>
+					</field>
+
+					<field type="note" name="theme_note" class="alert alert-info" label="MOD_JM_SOCIAL_ICONS_FIELD_THEME_NOTE" description="MOD_JM_SOCIAL_ICONS_FIELD_THEME_NOTE_DESC" showon="theme:2" />
+
+					<field name="css" type="textarea" default="" label="MOD_JM_SOCIAL_ICONS_FIELD_CSS" description="MOD_JM_SOCIAL_ICONS_FIELD_CSS_DESC" rows="5" cols="10" filter="raw" showon="theme:2" />
+					<field type="note" name="css_note" class="alert alert-info" label="MOD_JM_SOCIAL_ICONS_FIELD_CSS_NOTE" description="MOD_JM_SOCIAL_ICONS_FIELD_CSS_NOTE_DESC" showon="theme:2" />
+					<field type="note" name="css2_note" class="alert alert-info" label="MOD_JM_SOCIAL_ICONS_FIELD_CSS2_NOTE" description="MOD_JM_SOCIAL_ICONS_FIELD_CSS2_NOTE_DESC" showon="theme:2" />
+
+					<field name="load_fontawesome" type="radio" class="btn-group" default="0" label="MOD_JM_SOCIAL_ICONS_FIELD_AWESOME" description="MOD_JM_SOCIAL_ICONS_FIELD_AWESOME_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,550 @@
+// --------------------------------------------------
+// Module Styles
+// --------------------------------------------------
+
+// Extend style in base
+// --------------------
+@import "../../../plugins/system/t4/themes/base/scss/_modules";
+
+// 
+// Genecric Module
+// --------------------------------------------------
+.t4-module {
+  // Module Inner
+  .module-inner {
+  }
+}
+
+// Module Title
+// ------------
+.module-title {
+  border-bottom: 1px solid $border-color;
+  margin: 0 0 $spacer 0;
+  padding: 0;
+  text-transform: uppercase;
+
+  span {
+    border-bottom: 1px solid $gray-500;
+    margin-bottom: -1px;
+    padding: 0 0 $spacer/1.5;
+  }
+}
+
+// Module Content
+// --------------
+.module-ct,
+.moduletable {
+}
+
+
+// 
+// Modules Prefixes
+// -----------------------------
+
+// Dark
+// -----
+.module-dark {
+  .module-title {
+  }
+} 
+
+.module.bg-primary,
+.module.bg-secondary,
+.module.bg-success,
+.module.bg-danger,
+.module.bg-warning,
+.module.bg-info,
+.module.bg-dark,
+// Cards
+.card.bg-primary,
+.card.bg-secondary,
+.card.bg-success,
+.card.bg-danger,
+.card.bg-warning,
+.card.bg-info,
+.card.bg-dark {
+  .module-title {
+    span {
+    }
+  }
+
+  .module-ct {
+    p {
+    }
+  }
+}
+
+// Mod rounded
+// -----------
+.module.mod-rounded {
+  .mod-rounded {
+  }
+}
+
+// Hilite
+// ----------
+.module-hilite {
+}
+
+// Shadow
+// ----------
+// Use to add Shadow to modules
+.mod-shadow {
+  .mod-shadow {
+  }
+}
+
+// Module outline
+.mod-border {
+  .mod-border {
+  }
+}
+
+
+//
+// JOOMLA! MODULES
+// --------------------------------------------------
+
+// Generic Modulable
+// -----------------
+// Modules are used in Component Position
+.moduletable {
+  > h3 {
+  }
+}
+
+
+// Menu
+// ----
+.t4-module,
+.t4-card,
+.moduletable,
+.module_menu {
+  .nav {
+  }
+  
+  .nav li {
+  }
+
+  .nav li .separator {
+  }
+  
+  .nav li a {
+    color: $gray-dark;
+
+    // Link States
+    &:hover, &:active, &:focus {
+      color: $body-color;
+    }
+  }
+
+  // Active state
+  .nav > li.active > a {
+    color: $body-color;
+    font-weight: $font-weight-bold;
+  }
+
+  // Sub Menus
+  .nav li ul {
+  }
+}
+
+
+// Menus in Dark Modules
+.module.bg-primary,
+.module.bg-secondary,
+.module.bg-success,
+.module.bg-danger,
+.module.bg-warning,
+.module.bg-info,
+.module.bg-dark,
+// Cards
+.card.bg-primary,
+.card.bg-secondary,
+.card.bg-success,
+.card.bg-danger,
+.card.bg-warning,
+.card.bg-info,
+.card.bg-dark {
+  .nav li a {
+  }
+}
+
+
+// Login Form
+// ----------
+#login-form {
+  margin-bottom: 0;
+
+  // Input Icons
+  .add-on {
+  }
+
+  .btn-primary {
+  }
+  
+  #form-login-username,
+  #form-login-password {
+  }
+
+  .mod-login__twofactor {
+    .icon-help::before {
+      font-weight: 900;
+    }
+  }
+
+  .input-group-prepend,
+  .input-group-append {
+    display: flex !important;
+
+    > span {
+      display: flex !important;
+    }
+  }
+
+}
+
+// Advertisement
+// -------------
+.bannergroup {
+}
+
+.banneritem {
+  a {
+    font-weight: bold;
+  }
+}
+
+.bannerfooter {
+  border-top: 1px solid $border-color;
+}
+
+
+// Categories, Most Read,
+// Most Popular, Archieve, Tags...
+// -------------------------------
+.categories-module {
+  @include module-list($icon: "\f07b");
+
+  > li {
+    border-bottom: 1px dotted $border-color;
+    color: $gray-700;
+
+    h4 {
+      font-weight: 500;
+    }
+  }
+
+  a {
+    color: $body-color;
+
+    &:hover, &:focus, &:active {
+      color: $link-hover-color;
+    }
+  }
+}
+
+.category-module {
+}
+
+.mostread,
+.latestnews,
+.relateditems,
+.tagssimilar ul {
+  li a {
+  }
+}
+
+.archive-module {
+}
+
+
+// News Feed
+// ----------
+.feed {
+  // Feed Title
+  h4 {
+  }
+
+  // Feed list
+  .newsfeed {
+
+    li {
+      border-top: 1px solid $border-color;
+    }
+
+    .feed-link {
+    }
+
+    .feed-item-description {
+    }
+  }
+
+}
+
+
+// Syndication
+// -----------
+a.syndicate-module {
+}
+
+
+// Latest Users 
+// ------------
+.latestusers {
+  li {
+  }
+}
+
+
+// Stats 
+// -----
+.stats-module {
+  dt, dd {
+  }
+}
+
+
+// Popular Tags
+//-------------
+.tagspopular {
+  ul {
+  }
+
+  ul > li {
+  }
+
+  ul > li > a {
+    // Links states
+    &:hover,
+    &:focus,
+    &:active {
+    }
+  }
+
+  .tag-count {
+  }
+}
+
+
+// Breadcrums Module
+// -----------------
+.module-ct > ol.breadcrumb {
+}
+
+
+// Latest user
+.latestnews {
+  a {
+    color: $body-color;
+
+    &:hover, &:focus, &:active {
+      color: $link-hover-color;
+    }
+  }
+}
+
+
+// Offer list module
+// -----------------
+.tag-filter {
+  margin-bottom: $spacer*2;
+  text-align: center;
+
+  button {
+    background-color: $gray-100;
+    color: $gray-800;
+    border-radius: 25px;
+    border: 0;
+    font-family: $font-family-base;
+    margin: 0 $spacer/3 $spacer/2;
+    padding: $spacer/3 $spacer;
+    outline: none;
+    text-transform: capitalize;
+    transition: all 0.25s ease-in-out;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $primary;
+    }
+
+    &.is-checked {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
+
+.offer-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 1px;
+    padding: 2px;
+  }
+
+  .offer-inner {
+    background-color: lighten($gray-100, 2%);
+    border-radius: $border-radius;
+    height: 100%;
+    padding: 0 0 $spacer*4 0;
+    text-align: center;
+  }
+
+  .item-media {
+    border-radius: $border-radius-sm;
+    display: block;
+    padding: 0;
+    margin-bottom: $spacer*2;
+    text-align: center;
+
+    #cp_image {
+      display: block;
+      overflow: hidden;
+    }
+
+    img {
+      border-radius: $border-radius $border-radius 0 0;
+      padding: 0;
+      max-width: auto;
+    }
+  }
+
+  .item-title {
+    font-size: $h5-font-size;
+    margin: 0 0 $spacer;
+    line-height: 24px;
+    font-weight: 500;
+
+    a {
+      color: $gray-900;
+
+      &:hover, &:focus, &:active {
+        color: $link-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .item-ct {
+    padding: 0 $spacer;
+  }
+
+  .offer-details {
+    color: $primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer/1.5;
+
+    .label {
+      color: $gray-500;
+      font-size: 12px;
+      font-weight: $font-weight-bold;
+      display: inline-block;
+      letter-spacing: 1px;
+      margin-right: 4px;
+      text-transform: uppercase;
+    }
+  }
+
+  .offer-coupon {
+    margin-bottom: $spacer/2;
+
+    .label {
+      border-radius: 3px;
+      color: $gray-600;
+      font-size: 12px;
+      font-weight: $font-weight-normal;
+      display: inline-block;
+      letter-spacing: 1px;
+      margin-right: 4px;
+      text-transform: uppercase;
+    }
+
+    .value {
+      border-bottom: 1px dashed $red;
+      display: inline-block;
+      color: $red;
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
+      line-height: 1;
+      padding: 2px 0;
+    }
+
+    .btn-get-offer {
+      background-color: $gray-500;
+      border-radius: 3px;
+      color: $white;
+      font-size: 12px;
+      display: inline-block;
+      padding: 2px 6px;
+      margin-left: 4px;
+      letter-spacing: 0.5px;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+
+      &:hover, &:focus, &:active {
+        background-color: $primary;
+        color: $white;
+        text-decoration: none;
+      }
+
+      i {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .offer-introtext {
+    line-height: 24px;
+  }
+
+  .offer-intro {
+    padding-bottom: $spacer;
+  }
+
+  .item-footer {
+    padding: 0 $spacer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: $spacer;
+  }
+
+  .mod-articles-category-readmore {
+    .btn {
+      background: $gray-200;
+      border: 0;
+      color: $gray-800;
+      font-size: $font-size-sm;
+      font-weight: 600;
+      padding: $spacer/1.5 $spacer;
+      letter-spacing: 0.02rem;
+      text-transform: uppercase;
+      transition: all 0.25s ease-in-out;
+      width: 100%;
+
+      &:hover, &:focus, &:active {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}
+
+.grid-item {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 33.33%;
+  }
+}

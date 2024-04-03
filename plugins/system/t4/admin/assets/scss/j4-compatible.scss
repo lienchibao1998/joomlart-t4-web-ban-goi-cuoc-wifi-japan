@@ -1,0 +1,486 @@
+$font-size-base: 13px;
+$font-size-s: 12px;
+
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+.j4, .j5 {
+  .hide {
+    display: none;
+  }
+
+  // Form elements
+  // ---------------------------
+  .btn,
+  button,
+  label,
+  input,
+  select,  
+  input[type="text"] {
+    box-shadow: none;
+    font-size: 12px;
+    outline: none;
+  }
+
+  .btn-primary,
+  .btn-success {
+    color: $white;
+  }
+
+  .spacer {
+    label {
+      width: auto;
+    }
+  }
+
+  // Field media
+  // ------------------------------------------
+  .field-media-wrapper {
+    background-color: $gray-100;
+    border-radius: 5px;
+    display: block;
+    padding: 4px;
+
+    .field-media-preview {
+      border-radius: 0;
+      border: 0;
+      max-width: none;
+      max-height: 48px;
+      padding: 0;
+
+      .field-media-preview-icon {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        min-width: 100px;
+        height: 40px;
+        width: auto;
+      }
+    }
+
+    .input-group {
+      background-color: $white;
+      border-radius: 4px;
+      padding: 0 100px 0 0;
+      position: relative;
+
+      .field-media-input {
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 4px !important;
+        box-shadow: none;
+        max-width: none;
+        margin: 2px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        z-index: 30;
+
+        &:focus {
+          border-color: $border-color;
+        }
+      }
+
+      input[type="text"] {
+        height: 30px;
+        line-height: 30px;
+      }
+
+      .button-select {
+        border-radius: 4px !important;
+        border: 0;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        position: absolute;
+        right: 34px;
+        top: 2px;
+      }
+
+      .button-clear {
+        border-radius: 4px !important;
+        border: 0;
+        display: block !important;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        padding: 0;
+        text-align: center;
+        height: 30px;
+        width: 30px;
+      }
+
+      .input-group-append {
+        background-color: transparent;
+        display: flex;
+        flex-wrap: nowrap;
+        position: absolute;
+        right: 3px;
+        top: 2px;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        z-index: 40;
+
+        .btn {
+          position: relative;
+          top: auto;
+          left: auto;
+          right: auto;
+          margin: 0;
+        }
+
+        .button-clear {
+          margin-left: $base-margin/2;
+          width: 30px;
+        }
+      }
+    }
+  }
+
+
+   // Fix chosen dropdown
+  .chosen-container.chosen-container-single {
+    font-size: $font-size-base;
+    max-width: none;
+    width: 100% !important;
+
+    .chosen-single {
+      background: transparent;
+      box-shadow: none;
+      border-radius: $input-border-radius;
+      border: 1px solid $border-color;
+      display: block;
+      height: auto;
+      line-height: 18px;
+      padding: 6px $base-padding;
+      width: 100% !important;
+
+      div {
+        top: -3px;
+
+        b {
+          background-position: -2px 8px;
+        }
+      }
+
+      > span {
+        margin-right: 0;
+      }
+    }
+
+    &.chosen-container-active {
+      .chosen-single {
+        border-radius: 5px 5px 0 0;
+      }
+
+      .chosen-drop {
+        border: 1px solid $border-color;
+        border-radius: 0 0 5px 5px;
+
+        .chosen-results {
+          .highlighted {
+            background-color: $blue !important;
+          }
+        }
+      }
+    }
+  }
+
+  .select-menu-type {
+    .chosen-container.chosen-container-single {
+      max-width: 220px !important;
+    }
+  }
+
+  #typelist_navigation_mega_duration {
+    max-width: none;
+  }
+
+
+  #attrib-themeConfig {
+    font-size: $font-size-base;
+  }
+
+
+  // Form select
+  .form-select {
+    background: url(../images/arrow-down.svg) no-repeat calc(100% - 8px) 12px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    padding: $base-width;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  // Menu Assignment
+  // --------------------
+  joomla-tab-element#assignment {
+    #fieldset-assignment {
+      border: 0;
+      border-radius: 0;
+      padding: 0 $base-padding*1.5;
+    }
+  }
+
+  #fieldset-assignment {
+
+    > legend {
+      background: transparent;
+      display: none;
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+
+    .form-check-input {
+      font-size: 16px;
+      margin-top: 0;
+      vertical-align: middle;
+    }
+  }
+
+  // Topbar preview
+  // --------------------------
+  .t4-sidebar-preview {
+    .t4-admin-save {
+      .t4-btn.dropdown-toggle {
+        float: right;
+      }
+    }
+
+    .toolbar-save {
+      a {
+        &::before {
+          display: none;
+        }
+      }
+
+      .btn-close {
+        background-image: none;
+        padding: 0;
+        text-align: center;
+        width: 32px;
+      }
+    }
+  }
+
+  #wrapper {
+    .content {
+      .row > .col-md-12 {
+        position: static;
+      }
+    }
+  }
+
+  // Pane view
+  // --------------------------
+  .t4-pn-views {
+    .t4-sidebar-nav {
+      .item-content {
+        font-size: $font-size-s;
+      }
+    }
+
+    .control-group {
+      .control-label {
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  // Fix current style
+  // --------------------------
+  .t4-current-style {
+    h1.temp_title {
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .dropdown-menu {
+      left: auto !important;
+      right: 0 !important;
+      top: 39px !important;
+      transform: none !important;
+    }
+  }
+
+  .t4-admin-save {
+    .dropdown-toggle {
+      .caret {
+        border-top: 4px solid $white;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        display: block;
+        margin-right: $base-padding/2;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .dropdown-menu {
+      left: auto !important;
+      right: 0 !important;
+      transform: none !important;
+      top: 38px !important;
+
+      li {
+        a {
+          color: $gray-700;
+          display: block;
+          line-height: 1;
+          padding: $base-padding $base-padding*2;
+
+          &:hover, &:focus, &:active {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+
+  // Fix preview postion
+  // --------------------------
+  .control-group {
+    .controls {
+      margin-left: 0;
+      min-width: auto;
+    }
+  }
+
+  // T4 Modal
+  // --------------------------
+  .t4-modal {
+    font-size: $font-size-base;
+
+    // Fix chosen dropdown
+    .chosen-container.chosen-container-single {
+      font-size: $font-size-base;
+      max-width: none;
+      width: 100% !important;
+
+      .chosen-single {
+        border-radius: $input-border-radius;
+        border: 1px solid $border-color;
+        display: block;
+        height: auto;
+        padding: $base-padding/2 $base-padding*2;
+        width: 100% !important;
+      }
+
+      &.chosen-container-active {
+        .chosen-single {
+          border-radius: 5px 5px 0 0;
+        }
+
+        .chosen-drop {
+          border: 1px solid $border-color;
+          border-radius: 0 0 5px 5px;
+
+          .chosen-results {
+            .highlighted {
+              background-color: $blue !important;
+            }
+          }
+        }
+      }
+    }
+
+    .t4-input[type="range"] {
+      margin-top: 3px;
+    }
+
+    .btn, input[type="text"] {
+      font-size: $font-size-base;
+      font-weight: 400;
+    }
+
+    .nav.nav-tabs {
+      background-color: transparent;
+      display: block;
+      @include clearfix();
+
+      li,
+      li.nav-item {
+        float: left;
+        width: auto;
+      }
+
+      a,
+      a.nav-link {
+        background-color: transparent;
+        box-shadow: none;
+        color: $gray-600;
+        float: none;
+        outline: none;
+        width: auto;
+
+        &.active {
+          color: $link-color;
+
+          &:after {
+            background: $link-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Tab general
+  .t4-modal-content {
+    .control-group-inner {
+      width: 100%;
+
+      > .control-label {
+        float: none;
+        width: auto;
+      }
+    }
+  }
+
+  // Layout edit
+  &.layout-edit.modal-open.t4-modal-open {
+    .t4-modal {
+      height: 783px;
+      width: 80vw;
+
+      .t4-modal-header {
+        display: none;
+      }
+    }
+
+    .modal-dialog.modal-lg {
+      margin: 0;
+      max-width: 100%;
+
+      .close {
+        background-color: transparent;
+        border: 0;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+
+        span {
+          background-color: $gray-100;
+          border-radius: 50%;
+          color: $gray-600;
+          display: block;
+          height: 32px;
+          line-height: 32px;
+          font-size: 24px;
+          width: 32px;
+        }
+
+        &:hover span {
+          background-color: $gray-200;
+        }
+      }
+    }
+  }
+}

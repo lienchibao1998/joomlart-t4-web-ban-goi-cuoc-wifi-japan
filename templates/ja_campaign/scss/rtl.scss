@@ -1,0 +1,30 @@
+// Function, variables
+@import "vars";
+
+// For template rtl style
+.fa, .fab, .fal, .far, .fas{
+	transform: scale(-1,1);
+}
+
+#editor {
+	.custom-edit-content {
+		.control-group {
+			.chzn-container {
+				.chzn-drop {
+					right: -9999px;
+					left: auto !important;
+
+					.chzn-search {
+						position: static;
+					}
+				}
+
+				&.chzn-with-drop {
+					.chzn-drop {
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+jQuery(function(e){acym_helperFile.initFile()});

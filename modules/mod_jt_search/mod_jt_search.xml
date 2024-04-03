@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>JT Search</name>
+	<author>JoomlaTema</author>
+	<creationDate>Sep 2022</creationDate>
+	<copyright>(C) 2007 - 2022 www.joomlatema.net All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@www.joomlatema.net</authorEmail>
+	<authorUrl>www.joomlatema.net</authorUrl>
+	<version>1.6</version>
+	<description>
+	<![CDATA[
+	<h3>JT Search by JoomlaTema.net</h3>
+<p>A Smart Search module for Joomla.
+<h3>Useful links</h3>
+	<ul><li><a target='_blank' href='https://www.joomlatema.net'>Joomla Templates and Extensions</a></li>
+	<li><a target='_blank' href='https://www.joomlatema.net/contact.html'>Report bug</a></li>
+	<li><a target='_blank' href='https://www.joomlatema.net/forum.html'>Support Forum</a></li></ul></p>
+	]]></description>
+	<namespace path="src">Joomla\Module\JTSearch</namespace>
+	<files>
+		<filename module="mod_jt_search">mod_jt_search.php</filename>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+	</files>
+		<updateservers>
+        <server type="extension" priority="1" name="JT Search Updates">http://joomlatema.net/update_server/joomla4/jt_search.xml</server>
+    </updateservers>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_jt_search.ini</language>
+		<language tag="en-GB">language/en-GB.mod_jt_search.sys.ini</language>
+	</languages>
+	<help key="Site_Modules:_Smart_Search" />
+	<config>
+		<fields name="params" addfieldprefix="Joomla\Component\Finder\Administrator\Field">
+			<fieldset name="basic">
+			<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+				<field
+					name="searchfilter"
+					type="searchfilter"
+					label="MOD_JT_SEARCH_FIELDSET_BASIC_SEARCHFILTER_LABEL"
+					default=""
+				/>
+
+				<field
+					name="JTshow_autosuggest"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_SEARCH_FIELDSET_BASIC_AUTOSUGGEST_LABEL"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field
+					name="show_label"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_SEARCH_FIELDSET_ADVANCED_SHOW_LABEL_LABEL"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="alt_label"
+					type="text"
+					label="MOD_JT_SEARCH_FIELDSET_ADVANCED_ALT_LABEL"
+				/>
+
+				<field
+					name="show_button"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_SEARCH_FIELDSET_ADVANCED_SHOW_BUTTON_LABEL"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="opensearch"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_JT_SEARCH_FIELD_OPENSEARCH_LABEL"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="opensearch_name"
+					type="text"
+					label="MOD_JT_SEARCH_FIELD_OPENSEARCH_TEXT_LABEL"
+					showon="opensearch:1"
+				/>
+
+				<field
+					name="set_itemid"
+					type="menuitem"
+					label="MOD_JT_SEARCH_FIELDSET_ADVANCED_SETITEMID_LABEL"
+					filter="integer"
+					>
+					<option value="0">MOD_JT_SEARCH_SELECT_MENU_ITEMID</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

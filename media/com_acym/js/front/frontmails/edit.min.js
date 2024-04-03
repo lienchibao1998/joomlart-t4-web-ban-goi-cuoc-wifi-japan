@@ -1,0 +1,1 @@
+jQuery(function(i){acym_helperEditorHtml.initEditorHtml(),acym_helperEditorWysid.initEditor()});
